@@ -9,7 +9,7 @@
  */
  
 // CONSTANTS
-int FLAG_SIZE = 200;
+int FLAG_SIZE = 100;
 int FLAG_FACTOR_WIDTH = 3;
 int FLAG_FACTOR_HEIGHT = 2;
 
@@ -57,16 +57,16 @@ void keyPressed() {
       botswana();
       break;
     case '2':
-      //botswana();
+      bahamas();
       break;
     case '3':
-      //cuba();
+      cuba();
       break;
     case '4':
-      //mauritania();
+      mauritania();
       break;
     case '5':
-      //kuwait();
+      kuwait();
       break;
     case '6':
       //seychelles();
