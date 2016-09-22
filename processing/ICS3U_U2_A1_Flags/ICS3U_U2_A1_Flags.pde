@@ -69,10 +69,10 @@ void keyPressed() {
       kuwait();
       break;
     case '6':
-      //seychelles();
+      seychelles();
       break;
     case '7':
-      //southAfrica();
+      southAfrica();
       break;
   }
 }
