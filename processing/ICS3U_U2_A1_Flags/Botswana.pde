@@ -15,11 +15,11 @@ void botswana() {
   
   // WHITE PART OF FLAG
   fill( 255, 255, 255 );
-  stroke(0);
+  noStroke();
   rect( 
-    xFlagCenter, yFlagCenter, 
-    FLAG_FACTOR_WIDTH * FLAG_SIZE, 
-    (FLAG_FACTOR_HEIGHT * FLAG_SIZE) * 0.2
+    xFlagCenter+1, yFlagCenter, 
+    FLAG_FACTOR_WIDTH * FLAG_SIZE -1, 
+    (FLAG_FACTOR_HEIGHT * FLAG_SIZE) * 0.3
   );
   
   // BLACK PART OF FLAG
