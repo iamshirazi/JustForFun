@@ -16,12 +16,12 @@ void mauritania() {
   //HALF MOON
   fill(250, 224, 66);
   noStroke();
-  ellipse( xFlagCenter, yFlagCenter, FLAG_FACTOR_WIDTH *40, FLAG_FACTOR_HEIGHT *45);
+  ellipse( xFlagCenter, yFlagCenter - 10, FLAG_FACTOR_WIDTH * 50 - 30, FLAG_FACTOR_HEIGHT * 55);
   
   //GREEN ELLIPSE
   fill( 0, 98, 51);
   noStroke();
-  ellipse( xFlagCenter, yFlagCenter -15, FLAG_FACTOR_WIDTH *40, FLAG_FACTOR_HEIGHT *45);
+  ellipse( xFlagCenter, yFlagCenter - 25, FLAG_FACTOR_WIDTH * 50 - 30 , FLAG_FACTOR_HEIGHT * 55 );
   
    // STAR
   fill(250, 224, 66);
