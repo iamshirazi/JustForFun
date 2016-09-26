@@ -15,7 +15,7 @@ void kuwait() {
   
     // RED PART OF FLAG
   fill( 230, 0, 0 );
-  stroke(0);
+  noStroke();
   rect( 
     xFlagCenter, yFlagCenter +66.5, 
     FLAG_FACTOR_WIDTH * FLAG_SIZE, 
@@ -24,7 +24,7 @@ void kuwait() {
   
      // BLACK PART OF FLAG
   fill( 0 );
-  stroke( 0 );
+  noStroke();
   triangle(
     xFlagCenter, yFlagCenter,
     xFlagCenter - FLAG_FACTOR_WIDTH * FLAG_SIZE * 0.5, yFlagCenter - FLAG_FACTOR_HEIGHT * FLAG_SIZE * 0.5,
@@ -33,7 +33,7 @@ void kuwait() {
   
   //WHITE RECTANGLE
   fill( 255 );
-  stroke(0);
+  noStroke();
   rect(
     xFlagCenter +50, yFlagCenter, 
     FLAG_FACTOR_WIDTH * FLAG_SIZE -500, 
