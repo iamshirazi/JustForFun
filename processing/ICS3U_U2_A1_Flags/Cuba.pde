@@ -42,7 +42,7 @@ void cuba() {
   // STAR
   fill(255);
   noStroke();
-  star( xFlagCenter-95, yFlagCenter, 28, 12, 5 );
+  star( xFlagCenter - FLAG_FACTOR_WIDTH * FLAG_SIZE * 0.33, yFlagCenter, FLAG_FACTOR_WIDTH * FLAG_SIZE * 0.1, FLAG_FACTOR_WIDTH * FLAG_SIZE * 0.05, 5 );
   
   
 }

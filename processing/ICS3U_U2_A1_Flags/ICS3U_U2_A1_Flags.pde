@@ -72,7 +72,7 @@ void keyPressed() {
       seychelles();
       break;
     case '7':
-      southAfrica();
+      southafrica();
       break;
   }
 }
