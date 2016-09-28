@@ -9,7 +9,7 @@
  */
  
 // CONSTANTS
-int FLAG_SIZE = 100;
+int FLAG_SIZE = 200;
 int FLAG_FACTOR_WIDTH = 3;
 int FLAG_FACTOR_HEIGHT = 2;
 

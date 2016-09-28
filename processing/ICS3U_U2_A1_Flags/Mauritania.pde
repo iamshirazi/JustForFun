@@ -26,5 +26,6 @@ void mauritania() {
    // STAR
   fill(250, 224, 66);
   noStroke();
-  star( xFlagCenter, yFlagCenter-20, 28, 12, 5 );
+  star( xFlagCenter - FLAG_FACTOR_WIDTH * FLAG_SIZE * 0.01, yFlagCenter - FLAG_FACTOR_WIDTH * FLAG_SIZE * 0.05, 
+  FLAG_FACTOR_WIDTH * FLAG_SIZE * 0.12, FLAG_FACTOR_WIDTH * FLAG_SIZE * 0.05, 5 );
 }
