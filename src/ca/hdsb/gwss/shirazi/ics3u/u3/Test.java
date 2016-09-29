@@ -9,8 +9,11 @@ Description:
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ca.hdsb.gwss.shirazi.ics3u.u3;
 
+        
+
+package ca.hdsb.gwss.shirazi.ics3u.u3;
+import java.util.Scanner;
 /**
  *
  * @author 1shirazimat
@@ -34,7 +37,53 @@ public class Test {
         System.out.println( Math.random( ) );
         System.out.println( Math.pow( 2 * 10, 4 ) );
         
-        // TODO code application logic here
+        //CONSTANTS
+        
+        
+        
+        //VARIABLES
+        
+        int age = 16;
+        String name;
+        double subSubtotal;
+        subSubtotal = 0.65
+                
+        //OBJECTS
+;
+        
+        Scanner input = new Scanner( System.in );
+        
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        
+        NumberFormat decimal = NumberFormat.getCurrencyInstance();
+        decimal.stMinimumFractionDigits( 1 );
+        decimal.stMaximumFractionDigits( 5 ); 
+        
+        //EXAMPLE
+        
+        System.out.println("What is your last name?");
+       name = input.nextLine();
+        
+       System.out.println("Hello " + name);
+       
+       System.out.println("What is your age?");
+       age = input.nextInt();
+       System.out.println( age + "! Wow, you're young!" );
+       
+       //HOW TO FORMAT
+       
+       //DATE
+       
+       09/29/2016
+       09/29/16
+       
+       //TIME
+       
+       2:44.56
+       14:44.56
+       
+       /
+               
     }
     
 }
