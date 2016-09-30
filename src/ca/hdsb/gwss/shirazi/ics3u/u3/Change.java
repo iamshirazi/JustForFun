@@ -18,20 +18,21 @@ public class Change {
     public static void main(String[] args) {
  
         Scanner input = new Scanner( System.in );
-        String cents;
+        String money;
         System.out.println("Enter your change in cents.");
-        cents = input.nextLine();
+        money = input.nextLine();
         
         
         
+        double T; // TOTAL IN CENTS
+        double Q = T / 25;
+        double D = T / 10; // DIME
+        double N = T / 5; // NICKEL
+        double P = T / 1; // PENNY
+     
+         System.out.println("Enter your change in cents.");
+        money = input.nextLine();
         
-        double Q = 0.25; // QUARTER
-        double D = 0.10; // DIME
-        double N = 0.05; // NICKEL
-        double P = 0.01; // PENNY
-        int T = 212; // TOTAL IN CENTS
-        
-        // CHANGE IN CENTS = 100,000 CENTS
         System.out.println( "Change In Cents:" + T);
         
         System.out.println("Total Amount of Coins:");

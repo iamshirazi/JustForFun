@@ -46,10 +46,9 @@ public class Test {
         int age = 16;
         String name;
         double subSubtotal;
-        subSubtotal = 0.65
+        subSubtotal = 0.65;
                 
         //OBJECTS
-;
         
         Scanner input = new Scanner( System.in );
         

@@ -28,14 +28,25 @@ public class Arithmetic {
         System.out.println("The Total Is:");
         System.out.println( Math.abs( a + b)); // SUM IS 30
         
+        System.out.println("Would you like to see the difference of 10 and 20?");
+        numbers = input.nextLine();
         System.out.println("The Difference Is:");
         System.out.println( a % b ); // DIFFERENCE IS 10
-        
+
+        System.out.println("Would you like to see the product of 10 and 20?");
+        numbers = input.nextLine();
         System.out.println("The Product Is:");
         System.out.println( a * b ); // PRODUCT IS 200
         
+        System.out.println("Would you like to see the absolute value of 20?");
+        numbers = input.nextLine();
         System.out.println(" The Absolute Value Is:");
         System.out.println( Math.abs( b )); // THE ABSOLUTE VALUE IS 20
+        
+        System.out.println("Would you like to see the absolute value of 10?");
+        numbers = input.nextLine();
+        System.out.println(" The Absolute Value Is:");
+        System.out.println( Math.abs( a )); // THE ABSOLUTE VALUE IS 10
      //l   
     }
     
