@@ -18,23 +18,25 @@ public class Digits {
     public static void main(String[] args) {
       
     Scanner input = new Scanner( System.in );
-
- String numbers;
-        System.out.println("Enter a three digit number.");
-        numbers = input.nextLine(); // NUMBER IS 123
-         double N;
-         double H;
-         double T;
-         double O;
+    String numbers;
+        
+    // VARIABLES
          
-        System.out.println("The Hundreth Place Digit is:");
-        System.out.println( Math.abs( H )); 
+    int N;
+         
+         //INPUT
+         System.out.println("Enter a three digit number.");
+         N = input.nextInt(); 
         
-        System.out.println("The Tens Place Digit is:");
-        System.out.println( Math.abs( T ));
+         // PROCESSING
+         System.out.println("The Hundreth Place Digit is:");
+         System.out.println( Math.abs( N / 100 )); 
         
-        System.out.println("The Ones Place Digit is:");
-        System.out.println( Math.abs( O )); 
+         System.out.println("The Tens Place Digit is:");
+         System.out.println( Math.abs((N / 10) % 10 ));
+        
+         System.out.println("The Ones Place Digit is:");
+         System.out.println( Math.abs( N % 10 )); 
          
          
     }
