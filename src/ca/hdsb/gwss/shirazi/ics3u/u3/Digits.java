@@ -20,21 +20,24 @@ public class Digits {
     Scanner input = new Scanner( System.in );
 
  String numbers;
+ 
+  double N;
+  
         System.out.println("Enter a three digit number.");
-        numbers = input.nextLine(); // NUMBER IS 123
-         double N;
+        N = input.nextDouble(); // NUMBER IS 123
+        
          double H;
          double T;
          double O;
          
         System.out.println("The Hundreth Place Digit is:");
-        System.out.println( Math.abs( H )); 
+        System.out.println( Math.abs( (N / 100 ) +10 )); 
         
         System.out.println("The Tens Place Digit is:");
-        System.out.println( Math.abs( T ));
+        System.out.println( Math.abs(( N / 10 ) % 10 ));
         
         System.out.println("The Ones Place Digit is:");
-        System.out.println( Math.abs( O )); 
+        System.out.println( Math.abs(( N / 10) )); 
          
          
     }

@@ -52,11 +52,6 @@ public class Test {
         
         Scanner input = new Scanner( System.in );
         
-        NumberFormat currency = NumberFormat.getCurrencyInstance();
-        
-        NumberFormat decimal = NumberFormat.getCurrencyInstance();
-        decimal.stMinimumFractionDigits( 1 );
-        decimal.stMaximumFractionDigits( 5 ); 
         
         //EXAMPLE
         
@@ -68,21 +63,8 @@ public class Test {
        System.out.println("What is your age?");
        age = input.nextInt();
        System.out.println( age + "! Wow, you're young!" );
+   
        
-       //HOW TO FORMAT
-       
-       //DATE
-       
-       09/29/2016
-       09/29/16
-       
-       //TIME
-       
-       2:44.56
-       14:44.56
-       
-       /
-               
     }
-    
-}
+       
+  }
