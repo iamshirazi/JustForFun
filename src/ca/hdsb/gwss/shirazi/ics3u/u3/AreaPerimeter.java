@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package ca.hdsb.gwss.shirazi.ics3u.u3;
-
+import java.util.Scanner;
 /**
  *
  * @author 1shirazimat
@@ -15,15 +15,32 @@ public class AreaPerimeter {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      
-        int l = 50;
-        int w = 20;
-        int A = 1000;
-        int P = 140;
+    Scanner input = new Scanner( System.in );
+    String numbers;
+    
+    // VARIABLES
+        int l;
+        int w;
         
-        System.out.println( l * w ); // AREA IS l * w WHICH IS 1000
-        System.out.println( (2 * l) + (2 * w) ); // PERIMETER IS 2l + 2w WHICH IS 140
-                
+        
+        // INPUT
+        
+        System.out.println("Enter the Lenth of a Rectangle in cm. ");
+        l = input.nextInt();
+        
+        System.out.println("Enter the Width of a Rectangle in cm.");
+        w = input.nextInt();
+          
+        // PROCESSING
+        
+        int A = l * w;
+        int P = (2 * l) + (2 * w);
+       
+        
+        // OUTPUT
+        
+        System.out.println("The Area of the Rectangle is: " + A + "cm^2");
+        System.out.println("The Perimeter of the Rectangle is: " + P + "cm");
     }
     
 }
