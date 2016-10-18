@@ -30,7 +30,11 @@ public class AlienDetector {
         System.out.println("How Many Eyes?");
         E = input.nextInt();
 
-// PROCESSING
+        // INVALID DATA
+        if ( A <= 0 || E <= 0) {
+            System.out.println("Invalid Data.");
+        } else {
+// VALID DATA
         if (A >= 3 && E <= 4) {
             System.out.println("TroyMartian");
         }
@@ -40,7 +44,7 @@ public class AlienDetector {
         if (A <= 2 && E <= 3) {
             System.out.println("GraemeMercurian");
         }
-
+     }
     }
 
 }
