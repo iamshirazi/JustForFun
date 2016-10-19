@@ -81,15 +81,17 @@ public class CellSell {
 
         System.out.println("Plan B Costs " + money.format(costPlanB));
       
+        if (costPlanA == costPlanB) {
+            System.out.println("Plan A and Plan B are the Same Price ");
+        }
+        
         if (costPlanA < costPlanB) {
             System.out.println("Plan A is Cheapest.");
         }
         if (costPlanA > costPlanB) {
             System.out.println("Plan B is Cheapest.");
         }
-        if (costPlanA == costPlanB) {
-            System.out.println("Plan A and Plan B are the Same Price ");
-        }
+   
     }
 
 }
