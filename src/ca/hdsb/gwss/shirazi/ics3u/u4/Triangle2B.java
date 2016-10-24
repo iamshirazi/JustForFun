@@ -29,7 +29,7 @@ public class Triangle2B {
         int sideLengthA;
         int sideLengthB;
         int sideLengthC;
-
+        
 // OBJECT
         Scanner input = new Scanner(System.in);
 
@@ -46,9 +46,12 @@ public class Triangle2B {
         if ( sideLengthA <= 0 || sideLengthB <= 0 || sideLengthC <= 0 ) {
             System.out.println("INVALID DATA!");
                 }       
-        else if ((sideLengthA * sideLengthA) + (sideLengthB * sideLengthB)
-                == (sideLengthC * sideLengthC)) {
-            System.out.println("These sides will make a right angle triangle.");
+        else if  (((sideLengthA * sideLengthA) + (sideLengthB * sideLengthB)
+            == (sideLengthC * sideLengthC)) 
+            || ((sideLengthC * sideLengthC) + (sideLengthB * sideLengthB)
+            == (sideLengthA * sideLengthA)) || ((sideLengthC * sideLengthC) 
+                + (sideLengthA * sideLengthA) == (sideLengthB * sideLengthB)) ) {
+            System.out.println("These sides WILL make a right angle triangle.");
         }
         else {
             System.out.println("These sides will NOT make a right angle triangle.");
