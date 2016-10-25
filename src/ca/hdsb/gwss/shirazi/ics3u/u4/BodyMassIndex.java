@@ -32,7 +32,7 @@ public class BodyMassIndex {
         // OBJECT
         Scanner input = new Scanner(System.in);
         NumberFormat decimal = NumberFormat.getIntegerInstance();
-        decimal.setMinimumFractionDigits(2);
+        decimal.setMinimumFractionDigits(0);
         decimal.setMaximumFractionDigits(2);
 
         // KILOGRAMS OR POUNDS?
@@ -70,8 +70,8 @@ public class BodyMassIndex {
             // INVALID DATA (IMPERIAL)
             if (height > 108 || weight > 975 || height <= 0 || weight <= 0) {
                 System.out.println("INVALID DATA.");
+                
             } else {
-
             // CALCULATE BMI
             bmi = Math.abs((weight * 703) / (height * height));
             System.out.println("Your BMI is: " + decimal.format(bmi));
