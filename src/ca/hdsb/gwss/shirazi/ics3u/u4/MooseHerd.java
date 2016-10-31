@@ -29,7 +29,6 @@ public class MooseHerd {
             System.out.println( "Year: " + t + " Population: " + population );
             population = (int) ( 220.0 / ( 1+10*Math.pow(0.83, t+1 ) ) );
         }
-// YEARS SUPERVISED
 
 
     }
