@@ -9,7 +9,10 @@ Description:
  * and open the template in the editor.
  */
 package ca.hdsb.gwss.shirazi.ics3u.u4;
+
 import java.util.Scanner;
+import java.text.NumberFormat;
+
 /**
  *
  * @author 1shirazimat
@@ -20,37 +23,46 @@ public class CompoundInvesting {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
+        // OBJECTS
+        Scanner input = new Scanner(System.in);
+        NumberFormat money = NumberFormat.getCurrencyInstance();
+
+        // VARIABLES
+        double interestRate;
+        double yearlyInvestment;
+        int years;
+        double accountAmount;
+
+        // INPUT
+        System.out.println("Enter the Yearly Investment ($).");
+        yearlyInvestment = input.nextDouble(); 
         
-    // OBJECTS
-    Scanner input = new Scanner(System.in);
-    
-    // CONSTANTS
-    final int start = 1;
-    final int end = 15;
-    
-    // VARIABLES
-    double interestRate = 2.5;
-    double yearlyInvestment = 100;
-    int years = 3;
-    
-    // INPUT
-    //System.out.println("Enter the Yearly Investment ($).");
-    //yearlyInvestment = input.nextDouble(); 
-    
-    //System.out.println("Enter the Interest Rate (%).");
-    //interestRate = input.nextDouble(); 
-    
-    //System.out.println("Enter the Number of Years.");
-    //years = input.nextInt(); 
-    
-    // PROCESSING
-    double interest = Math.abs( ((interestRate / 100) * yearlyInvestment) );
-    
-    
-    // OUTPUT 
-    for 
-   
-    
+        System.out.println("Enter the Interest Rate (%).");
+        interestRate = input.nextDouble(); 
+        
+        System.out.println("Enter the Number of Years.");
+        years = input.nextInt();
+
+        // OUTPUT 
+        System.out.format("%5s %20s %10s %10s\n", "Year", "Amount in Account",
+                "Interest", "Total");
+
+           accountAmount = yearlyInvestment;
+           
+           if (years > 15) {
+               years = 15;
+           }
+        
+        for (int actualYears = 1; actualYears <= years; actualYears++) {
+           double interest = Math.abs(((interestRate / 100) * accountAmount));
+           
+           double total = accountAmount + interest;
+           
+           System.out.format("%3s %15s %15s %12s\n", actualYears, money.format
+           (accountAmount), money.format(interest), money.format(total));
+           
+           accountAmount = accountAmount + yearlyInvestment + interest;    
+        }
     }
-    
 }
