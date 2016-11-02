@@ -47,13 +47,14 @@ public class LabAnimals {
         endingFood = (startingFood - startingAnimals) + foodAdded;
         endingAnimals = startingAnimals * 2;
         
+        // INVALID DATA
+        if ( startingAnimals <= 0 || startingFood <= 0 || foodAdded <= 0 ) {
+        System.out.println("Invalid Data, please try again.");
+        } else {
         // OUTPUT IN TABLE FORM
         System.out.format("%6s %18s %15s %12s %16s\n", "Hours", "| Animals At Start",
                 "| Food At Start", "| Food At End", "| Animals At End");
-
-        // INVALID DATA
-        
-        
+     
         // VALID DATA
         while ( startingFood > startingAnimals ) {
             System.out.format("%4s %14s %16s %14s %14s\n", hours, startingAnimals,
@@ -66,7 +67,7 @@ public class LabAnimals {
             endingAnimals = startingAnimals * 2;
 
         }
-
+      }
     }
 
 }

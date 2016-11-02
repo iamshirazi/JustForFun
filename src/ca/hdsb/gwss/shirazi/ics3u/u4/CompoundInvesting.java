@@ -10,6 +10,7 @@ table form.
  * and open the template in the editor.
  */
 package ca.hdsb.gwss.shirazi.ics3u.u4;
+
 import java.util.Scanner;
 import java.text.NumberFormat;
 
@@ -36,40 +37,39 @@ public class CompoundInvesting {
 
         // INPUT
         System.out.println("Enter the Yearly Investment ($).");
-        yearlyInvestment = input.nextDouble(); 
-        
+        yearlyInvestment = input.nextDouble();
+
         System.out.println("Enter the Interest Rate (%).");
-        interestRate = input.nextDouble(); 
-        
+        interestRate = input.nextDouble();
+
         System.out.println("Enter the Number of Years.");
         years = input.nextInt();
 
-        // OUTPUT TABLE WITH VALUES
-        System.out.format("%5s %20s %10s %10s\n", "Year", "Amount in Account",
-                "Interest", "Total");
+        accountAmount = yearlyInvestment;
 
-           accountAmount = yearlyInvestment;
-           
-           if (years > 15) {
-               years = 15;
-               
-           } // INVALID DATA
-           if ( years <= 0 || accountAmount <= 0 || interestRate <= 0 || 
-           yearlyInvestment <= 0) {
-           System.out.println("Invalid data, please try again."); 
-           
-           // VALID DATA
-           } else {
-           for (int actualYears = 1; actualYears <= years; actualYears++) {
-           double interest = Math.abs(((interestRate / 100) * accountAmount));
-           
-           double total = accountAmount + interest;
-           
-           System.out.format("%3s %15s %15s %12s\n", actualYears, money.format
-           (accountAmount), money.format(interest), money.format(total));
-           
-           accountAmount = accountAmount + yearlyInvestment + interest;  
-        }
+        // INVALID DATA
+        if (years <= 0 || accountAmount <= 0 || interestRate <= 0
+                || yearlyInvestment <= 0) {
+            System.out.println("Invalid data, please try again.");
+        } // OUTPUT TABLE WITH VALUES
+        else {
+            System.out.format("%5s %20s %10s %10s\n", "Year", "Amount in Account",
+                    "Interest", "Total");
+
+            if (years > 15) {
+                years = 15;
+            }
+
+            // VALID DATA
+            for (int actualYears = 1; actualYears <= years; actualYears++) {
+                double interest = Math.abs(((interestRate / 100) * accountAmount));
+
+                double total = accountAmount + interest;
+
+                System.out.format("%3s %15s %15s %12s\n", actualYears, money.format(accountAmount), money.format(interest), money.format(total));
+
+                accountAmount = accountAmount + yearlyInvestment + interest;
+            }
         }
     }
 }
