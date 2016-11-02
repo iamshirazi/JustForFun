@@ -3,13 +3,13 @@ Name: Matthew Shirazi
 Date:  Monday October 31, 2016
 Version 1.0
 Description:
-            Calculates amount of interest
+            Calculates amount of interest for a period of up to 15 years in 
+table form.
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package ca.hdsb.gwss.shirazi.ics3u.u4;
-
 import java.util.Scanner;
 import java.text.NumberFormat;
 
@@ -44,7 +44,7 @@ public class CompoundInvesting {
         System.out.println("Enter the Number of Years.");
         years = input.nextInt();
 
-        // OUTPUT 
+        // OUTPUT TABLE WITH VALUES
         System.out.format("%5s %20s %10s %10s\n", "Year", "Amount in Account",
                 "Interest", "Total");
 
@@ -52,9 +52,15 @@ public class CompoundInvesting {
            
            if (years > 15) {
                years = 15;
-           }
-        
-        for (int actualYears = 1; actualYears <= years; actualYears++) {
+               
+           } // INVALID DATA
+           if ( years <= 0 || accountAmount <= 0 || interestRate <= 0 || 
+           yearlyInvestment <= 0) {
+           System.out.println("Invalid data, please try again."); 
+           
+           // VALID DATA
+           } else {
+           for (int actualYears = 1; actualYears <= years; actualYears++) {
            double interest = Math.abs(((interestRate / 100) * accountAmount));
            
            double total = accountAmount + interest;
@@ -62,7 +68,8 @@ public class CompoundInvesting {
            System.out.format("%3s %15s %15s %12s\n", actualYears, money.format
            (accountAmount), money.format(interest), money.format(total));
            
-           accountAmount = accountAmount + yearlyInvestment + interest;    
+           accountAmount = accountAmount + yearlyInvestment + interest;  
+        }
         }
     }
 }
