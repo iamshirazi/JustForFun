@@ -20,20 +20,22 @@ public class CloserToTwo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    
-    // VARIABLES
-    double number = 0;
-    double secondNumber = 1;
 
-    // OUTPUT OF NUMBERS CLOSER TO TWO
-    for ( double total = 1; total < 2 ; ) {
-        System.out.println(number + " + " + "1/" + secondNumber + " = " + total );
-    
-    number = total;    
-    secondNumber = secondNumber * 2;
-    total = number + (1 / secondNumber);
-    }    
+        // VARIABLES
+        double number = 0;
+        double secondNumber = 1;
+        double total = number + ( 1 / secondNumber );
         
+        // OUTPUT OF NUMBERS CLOSER TO TWO
+        while( total < 2 ) {
+            System.out.println(number + " + " + "1/" + secondNumber + " = "
+            + total);
+
+            total = number + (1 / secondNumber);
+            number = total;
+            secondNumber = secondNumber * 2;
+        }
+
     }
-    
+
 }

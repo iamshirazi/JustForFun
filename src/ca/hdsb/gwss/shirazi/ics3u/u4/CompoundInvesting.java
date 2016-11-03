@@ -35,7 +35,7 @@ public class CompoundInvesting {
         int years;
         double accountAmount;
 
-        // INPUT
+        // GET INVESTMENT, INTEREST RATE, AND YEAR AMOUNTS FROM USER
         System.out.println("Enter the Yearly Investment ($).");
         yearlyInvestment = input.nextDouble();
 
@@ -60,7 +60,7 @@ public class CompoundInvesting {
                 years = 15;
             }
 
-            // VALID DATA
+            // VALID DATA TABLE
             for (int actualYears = 1; actualYears <= years; actualYears++) {
                 double interest = Math.abs(((interestRate / 100) * accountAmount));
 
