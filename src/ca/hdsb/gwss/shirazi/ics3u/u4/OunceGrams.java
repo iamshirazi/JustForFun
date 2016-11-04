@@ -30,14 +30,12 @@ public class OunceGrams {
     int start = 1;
     double end = 15;        
     
-    
-    // PROCESSING    
+    // OUTPUT TABLE OF OUNCES AND GRAMS  
     System.out.format("%6s %6s\n", "Ounces" , "Grams");
     
     for ( double ounces = start ; ounces <= end  ; ounces++ ) {
         double grams = Math.abs( 28.35 * ounces); 
             System.out.println( ounces + "     " + decimal.format (grams) ); 
-    
     }
     }
     

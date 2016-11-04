@@ -51,6 +51,7 @@ public class CompoundInvesting {
         if (years <= 0 || accountAmount <= 0 || interestRate <= 0
                 || yearlyInvestment <= 0) {
             System.out.println("Invalid data, please try again.");
+
         } // OUTPUT TABLE WITH VALUES
         else {
             System.out.format("%5s %20s %10s %10s\n", "Year", "Amount in Account",
