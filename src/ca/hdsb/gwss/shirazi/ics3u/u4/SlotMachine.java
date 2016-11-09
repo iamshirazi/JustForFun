@@ -13,8 +13,6 @@ coins you have, and asks the user if they want to play or not.
 package ca.hdsb.gwss.shirazi.ics3u.u4;
 import java.util.Scanner;
 
-import java.util.Scanner;
-
 /**
  *
  * @author 1shirazimat
