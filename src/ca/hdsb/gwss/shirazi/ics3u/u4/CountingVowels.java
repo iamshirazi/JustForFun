@@ -24,17 +24,37 @@ public class CountingVowels {
     public static void main(String[] args) {
     
     // OBJECTS
-    Scanner input = new Scanner(System.in);
-    String a = "a", e = "e", i = "i", o = "o";  
+    Scanner input = new Scanner(System.in); 
     String sentence;
-            
+    String j;
+    
+    // VARIABLES
+    int vowels = 0, length;
+    
     // INPUT
     System.out.println("Please enter a sentence.");
     sentence = input.nextLine();
     
+    // INITIALIZE LENGTH
+    length = sentence.length();
+    
     // OUTPUT
-    System.out.println(  );
+    for ( int k = 0; k < length; k++ ) {
+    j = sentence.substring(k, k + 1);
+    
+    if (j.equalsIgnoreCase("a") == true)
+    vowels++;
+    else if (j.equalsIgnoreCase("e") == true)
+    vowels++;
+    else if (j.equalsIgnoreCase("i") == true)
+    vowels++;
+    else if (j.equalsIgnoreCase("o") == true)
+    vowels++;
+    else if (j.equalsIgnoreCase("u") == true)
+    vowels++;    
         
+    }
+    System.out.println("The sentence has " + vowels + ".");    
     }
     
 }
