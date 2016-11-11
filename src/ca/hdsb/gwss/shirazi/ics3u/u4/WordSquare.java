@@ -22,32 +22,23 @@ public class WordSquare {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    
-    // OBJECTS
-    Scanner input = new Scanner(System.in); 
-    String wordString = "COMPUTERS";
-    String k;
-    
-    // VARIABLES
-    int length;
-        
-    // INPUT
-    //System.out.println("Enter a word, please.");
-    //wordString = input.nextLine();
-    
-    length = wordString.length();
 
-    // OUTPUT
-    System.out.println( wordString );
-       
-    for ( int m = 0; m < wordString.length(); m++ ) {
-    k = wordString.substring( m, m + 1 );
-    
-    System.out.println( wordString + wordString.charAt( m ) );
-    
-    
-    }
-    
-    }
-    
+        // OBJECTS
+        Scanner input = new Scanner(System.in);
+        String wordString;
+        
+        // INPUT
+        System.out.println("Enter a word, please.");
+        wordString = input.nextLine();
+        System.out.println( );
+        
+        // CONVERTS
+        wordString = wordString.toUpperCase();
+
+        // OUTPUT
+        for (int m = 0; m < wordString.length(); m++) {
+            System.out.print( wordString.substring( m ) );
+            System.out.println( wordString.substring( 0, m ) );
+        }
+ }
 }
