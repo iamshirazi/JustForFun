@@ -82,11 +82,15 @@ public class Compass {
                 System.out.println("Start facing " + directionOne + ". Turn " + number
                 + " degrees " + directionTwo);
                 
-            } else if ( ( "S".equals(directionOne) && "S".equals(directionTwo) ) ||
+            } if ( ( "S".equals(directionOne) && "S".equals(directionTwo) ) ||
                    ( "N".equals(directionOne) && "N".equals(directionTwo) ) ||
                    ( "W".equals(directionOne) && "W".equals(directionTwo) ) ||
                    ( "E".equals(directionOne) && "E".equals(directionTwo) ) ) {
                 System.out.println("Invalid data. Please try again.");
+            }  
+            else {
+                System.out.println("Invalid data. Please try again.");
             }
+            
     }
 }
