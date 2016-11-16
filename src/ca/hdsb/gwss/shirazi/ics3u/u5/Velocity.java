@@ -1,9 +1,14 @@
 /*
+Name: Matthew Shirazi
+Date:  Tuesday November 15, 2016
+Version 1.0
+Description:
+           Calculates velocity of an object.
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ca.hdsb.gwss.shirazi.ics3u.u4;
+package ca.hdsb.gwss.shirazi.ics3u.u5;
 import java.util.Scanner;
 import java.text.NumberFormat;
 /**
@@ -13,8 +18,10 @@ import java.text.NumberFormat;
 public class Velocity {
     
     // OBJECTS
+    static NumberFormat decimal = NumberFormat.getNumberInstance(); 
     static Scanner input = new Scanner(System.in);
-    
+    static decimal.setMinimumFractionDigits( 0 );
+    static decimal.setMaximumFractionDigits( 2 );
     
     // GLOBAL VARIABLES  
     static double time;
@@ -37,7 +44,7 @@ public class Velocity {
 
     public static void calculateVelocity() {
     velocity = distance / time;
-    System.out.println("The velocity of the object is " + velocity + " meters per second.");
+    System.out.println("The velocity of the object is " + decimal.format(velocity) + " meters per second.");
     
     }
 

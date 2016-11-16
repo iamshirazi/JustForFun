@@ -10,7 +10,7 @@ It will count the vowels and output them.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ca.hdsb.gwss.shirazi.ics3u.u4;
+package ca.hdsb.gwss.shirazi.ics3u.u5;
 import java.util.Scanner;
 /**
  *
