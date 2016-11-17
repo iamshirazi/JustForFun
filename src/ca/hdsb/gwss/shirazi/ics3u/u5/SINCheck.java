@@ -25,12 +25,16 @@ public class SINCheck {
 
         // OBJECTS
         Scanner input = new Scanner(System.in);
-        String sin = "130692544";
+        String sin;
         String sinlength = "";
-        int n, sumEven = 0;
+        int n, sumEven = 0, sumOdd = 0;
         
         // VARIABLES
         int p = 1;
+        
+        // GET SIN
+        System.out.println("Enter the Social Insurance Number.");
+        sin = input.nextLine();
         
         // STEP 1 AND 2
         for (int i = 1; i < 8; i+=2 ) {
@@ -47,6 +51,31 @@ public class SINCheck {
         System.out.println( "Even Sum: " + sumEven);
         
         // STEP 3
-    }
+        for (int i = 0; i < 8; i+=2 ) {
+            n = Integer.parseInt( sin.charAt(i) + "" );
+            p = n + n;
+            sumOdd = n + p;
+            //System.out.println( n );
+        }
+         System.out.println( "Odd Sum: " + sumOdd);
+         
+        // STEP 4
+        int allSum = sumEven + sumOdd;
+        System.out.println( "Total: " + allSum );
+        
+        // STEP 5
+        n = Integer.parseInt( sin.charAt(8) + "" );
+        int multiply = n * 10;
+        int sumMultiply = multiply - allSum;
+        System.out.println( "Subtraction: " + sumMultiply );
+        
+        if (sumMultiply == n) {
+            System.out.println("The SIN is valid. Have a nice day.");
+        } else {
+            System.out.println("The SIN is INVALID.");
+        }
+        
+        
+    }   
 
 }

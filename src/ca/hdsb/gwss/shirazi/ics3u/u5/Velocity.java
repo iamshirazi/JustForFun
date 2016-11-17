@@ -20,8 +20,8 @@ public class Velocity {
     // OBJECTS
     static NumberFormat decimal = NumberFormat.getNumberInstance(); 
     static Scanner input = new Scanner(System.in);
-    static decimal.setMinimumFractionDigits( 0 );
-    static decimal.setMaximumFractionDigits( 2 );
+    //static decimal.setMinimumFractionDigits( 0 );
+    //static decimal.setMaximumFractionDigits( 2 );
     
     // GLOBAL VARIABLES  
     static double time;
@@ -36,15 +36,16 @@ public class Velocity {
     }
 
     public static void getData() {
-    System.out.println("Enter distance in meters.");
+    System.out.print("Enter distance in meters.");
     distance = input.nextDouble();
-    System.out.println("Enter time in seconds.");
+    System.out.print("Enter time in seconds.");
     time = input.nextDouble();
     }
 
     public static void calculateVelocity() {
     velocity = distance / time;
-    System.out.println("The velocity of the object is " + decimal.format(velocity) + " meters per second.");
+    System.out.println("The velocity of the object is " + 
+    decimal.format(velocity) + " meters per second.");
     
     }
 
