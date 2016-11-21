@@ -16,7 +16,7 @@ import java.util.Scanner;
  *
  * @author 1shirazimat
  */
-public class NumbersToWords {
+public class NumbersToWords2 {
 
     /**
      * @param args the command line arguments
@@ -105,7 +105,7 @@ public class NumbersToWords {
                 System.out.print("Thirty ");
                 break;
             case 4:
-                System.out.print("Fourty ");
+                System.out.print("Forty ");
                 break;
             case 5:
                 System.out.print("Fifty ");
