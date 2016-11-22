@@ -9,7 +9,6 @@ Description:
  * and open the template in the editor.
  */
 package ca.hdsb.gwss.shirazi.ics3u.u5;
-
 import java.util.Scanner;
 
 /**
@@ -25,12 +24,10 @@ public class StandardTime {
 
         String time;
         
-        //time = getTime();
-        time = "12:34";
+        time = getTime();
         convertHours( time );
 
     }
-
     public static String getTime() {
 
         // OBJECTS 
@@ -46,15 +43,37 @@ public class StandardTime {
         return time;
     }
 
-    public static int convertHours( String time ) {
+    public static void convertHours( String time ) {
 
-        System.out.println( "IN HERE! " + time );
+        // VARIABLES
+        boolean pm = false;
+        
+        // OUTPUT
         String standardHours = time.substring( 0, 2 );
         String standardMins = time.substring( 3 );
         
         int traditionalHours = Integer.parseInt( standardHours );
+        int traditionalMins = Integer.parseInt( standardMins );
         
-        return traditionalHours;
-    }
-
+        if ( traditionalHours > 23 || traditionalHours < 0 || traditionalMins > 59 || traditionalMins < 0) {
+            System.out.println("INVALID TIME");
+        } if ( traditionalHours > 12 ) {
+            pm = true;   
+            traditionalHours = traditionalHours - 12;
+        } if ( traditionalHours == 12 ) {
+            pm = true; 
+        } if ( traditionalHours == 00 ) {
+            traditionalHours = 12;
+        } if ( traditionalMins == 0 ) {
+            System.out.print(traditionalHours + ":" + traditionalMins + "0");
+        } if ( traditionalMins < 10 && traditionalMins > 0 ) {
+            System.out.print(traditionalHours + ":0" + traditionalMins);
+        } else if ((traditionalHours <= 23 && traditionalHours > 0) && (traditionalMins <= 59 && traditionalMins >= 0)) {
+            System.out.print(traditionalHours + ":" + traditionalMins);
+        } if ( pm == true ) {
+            System.out.println( "PM" );
+        } if ( pm == false ) {
+            System.out.println( "AM" );
+        }
+    }  
 }
