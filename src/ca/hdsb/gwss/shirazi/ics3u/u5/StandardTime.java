@@ -24,6 +24,8 @@ public class StandardTime {
 
         String time;
         int choice;
+        int standardHours;
+        int standardMins;
         
         choice = StandardOrTraditional();
         if (choice > 2 || choice < 1) {
@@ -33,7 +35,11 @@ public class StandardTime {
         convertHoursToTraditional( time );
         } else {
             time = getTraditionalTime();
-            convertHoursToStandard( time );
+            standardHours = convertHoursToInteger( time );
+            standardMins = convertMinsToInteger( time );
+            if (standardHours < 10) {
+                convertHoursToStandardOne( time, standardHours, standardMins );
+            }
         }  
     }
     public static int StandardOrTraditional() {
@@ -121,26 +127,41 @@ public class StandardTime {
         // INPUT
         System.out.println("Please enter a Traditional Time (hh:mm xx) ");
         time = input.nextLine();
-
         return time;
     }
     
-    public static void convertHoursToStandard( String time ) {
+    public static int convertHoursToInteger( String time ) {
         
+        // OUTPUT    
+        String traditionalHours = time.substring( 0, 0 );
+        int standardHours = Integer.parseInt( traditionalHours );
+        
+        return standardHours;
+    }
+    public static int convertMinsToInteger( String time ) {
+        
+        // OUTPUT    
+         String traditionalMins = time.substring( 3, 5 );
+      
+         int standardMins = Integer.parseInt( traditionalMins );
+        
+        return standardMins;
+    }
+    public static void convertHoursToStandardOne(String time, int standardHours, int standardMins) {
         // VARIABLES
-        boolean pm = false;
+        boolean pm = true;
         
         // OUTPUT
-                
-        String traditionalHours = time.substring( 0, 2 );
-        String traditionalMins = time.substring( 3, 5 );
-        String amPm = time.substring( 6 );
+        String amPm = time.substring( 6,8 );
         
-        int standardHours = Integer.parseInt( traditionalHours );
-        int standardMins = Integer.parseInt( traditionalMins );
-        
-        System.out.println("Standard Hours: " + standardHours + ":" + standardMins);
-    } 
+        if ( pm ) {
+            standardHours = standardHours + 12;
+            System.out.println ( "Standard Hours: " + standardHours + ":" + standardMins );
+        }
+        if ( standardHours < 10 ) {
+            System.out.println( "Standard Hours" + standardHours );
+        }
+    }
     
     
     

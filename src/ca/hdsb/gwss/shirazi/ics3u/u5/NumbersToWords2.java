@@ -47,6 +47,7 @@ public class NumbersToWords2 {
             ones();
         } else if (number >= 100 && number <=999) {
             hundreds();
+            teens();
             tens();
             ones();
         } else if (number >= 1 && number <=9) {
@@ -98,6 +99,7 @@ public class NumbersToWords2 {
     public static void tens() {
 
         switch (tens) {
+
             case 2:
                 System.out.print("Twenty ");
                 break;
@@ -126,78 +128,76 @@ public class NumbersToWords2 {
                 System.out.print("");
         }
     }
+   public static void teens() {
 
+        switch (teens) {
+            case 10:
+                System.out.print("Ten");
+                break;
+            case 11:
+                System.out.print("Eleven");
+                break;
+            case 12:
+                System.out.print("Twelve");
+                break;
+            case 13:
+                System.out.print("Thirteen");
+                break;
+            case 14:
+                System.out.print("Fourteen");
+                break;
+            case 15:
+                System.out.print("Fifteen");
+                break;
+            case 16:
+                System.out.print("Sixteen");
+                break;
+            case 17:
+                System.out.print("Seventeen");
+                break;
+            case 18:
+                System.out.print("Eighteen");
+                break;
+            case 19:
+                System.out.print("Nineteen");
+                break;
+            default:
+                System.out.print("");
+        }
+    }
+   
     public static void ones() {
 
         switch (ones) {
             case 1:
-                System.out.println("One");
+                System.out.print("One");
                 break;
             case 2:
-                System.out.println("Two");
+                System.out.print("Two");
                 break;
             case 3:
-                System.out.println("Three");
+                System.out.print("Three");
                 break;
             case 4:
-                System.out.println("Four");
+                System.out.print("Four");
                 break;
             case 5:
-                System.out.println("Five");
+                System.out.print("Five");
                 break;
             case 6:
-                System.out.println("Six");
+                System.out.print("Six");
                 break;
             case 7:
-                System.out.println("Seven");
+                System.out.print("Seven");
                 break;
             case 8:
-                System.out.println("Eight");
+                System.out.print("Eight");
                 break;
             case 9:
-                System.out.println("Nine");
+                System.out.print("Nine");
                 break;
             default:
-                System.out.println("");
-
-        }
-    }
-
-    public static void teens() {
-
-        switch (number) {
-            case 10:
-                System.out.println("Ten");
-                break;
-            case 11:
-                System.out.println("Eleven");
-                break;
-            case 12:
-                System.out.println("Twelve");
-                break;
-            case 13:
-                System.out.println("Thirteen");
-                break;
-            case 14:
-                System.out.println("Fourteen");
-                break;
-            case 15:
-                System.out.println("Fifteen");
-                break;
-            case 16:
-                System.out.println("Sixteen");
-                break;
-            case 17:
-                System.out.println("Seventeen");
-                break;
-            case 18:
-                System.out.println("Eighteen");
-                break;
-            case 19:
-                System.out.println("Nineteen");
-                break;
-            default:
-                System.out.println("Invalid");
+                System.out.print("");
         }
     }
 }
