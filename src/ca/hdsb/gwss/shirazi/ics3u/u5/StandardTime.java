@@ -34,12 +34,13 @@ public class StandardTime {
         time = getStandardTime();
         convertHoursToTraditional( time );
         } else {
-            time = getTraditionalTime();
-            standardHours = convertHoursToInteger( time );
-            standardMins = convertMinsToInteger( time );
-            if (standardHours < 10) {
-                convertHoursToStandardOne( time, standardHours, standardMins );
-            }
+        time = getTraditionalTime();
+       
+        standardHours = convertHoursToInteger( time );
+        standardMins =  convertMinsToInteger( time );
+        if ( standardHours < 10 ) {
+        convertHoursToStandardOne( time, standardHours, standardMins );
+        }
         }  
     }
     public static int StandardOrTraditional() {
@@ -56,7 +57,6 @@ public class StandardTime {
         
         return choice;
     }
-    
     public static String getStandardTime() {
 
         // OBJECTS 
@@ -71,7 +71,6 @@ public class StandardTime {
 
         return time;
     }
-
     public static void convertHoursToTraditional( String time ) {
 
         // VARIABLES
@@ -79,7 +78,7 @@ public class StandardTime {
         
         // OUTPUT
         String standardHours = time.substring( 0, 2 );
-        String standardMins = time.substring( 3 );
+        String standardMins = time.substring( 3 ); // 12:34
         
         int traditionalHours = Integer.parseInt( standardHours );
         int traditionalMins = Integer.parseInt( standardMins );
@@ -116,6 +115,8 @@ public class StandardTime {
         }
     }
     
+    // FOR TRADITIONAL TO STANDARD
+    
     public static String getTraditionalTime() {
         
         // OBJECTS 
@@ -129,40 +130,35 @@ public class StandardTime {
         time = input.nextLine();
         return time;
     }
-    
     public static int convertHoursToInteger( String time ) {
         
-        // OUTPUT    
-        String traditionalHours = time.substring( 0, 0 );
+        // CONVERSIAN   
+        String traditionalHours = time.substring( 0, 1 );// 0123456
         int standardHours = Integer.parseInt( traditionalHours );
-        
         return standardHours;
     }
     public static int convertMinsToInteger( String time ) {
         
-        // OUTPUT    
-         String traditionalMins = time.substring( 3, 5 );
-      
+        // CONVERSIAN
+         String traditionalMins = time.substring( 2, 4 ); // 1:23 am
          int standardMins = Integer.parseInt( traditionalMins );
-        
-        return standardMins;
+         return standardMins;
     }
-    public static void convertHoursToStandardOne(String time, int standardHours, int standardMins) {
-        // VARIABLES
-        boolean pm = true;
+    public static void convertHoursToStandardOne(String time, int standardHours,
+    int standardMins) {
         
         // OUTPUT
-        String amPm = time.substring( 6,8 );
+        String amPm = time.substring( 5 );
         
-        if ( pm ) {
+        if ( standardHours < 1 || standardHours > 12 || standardMins > 59 || 
+        standardMins < 0 || ( !(amPm.equals("am")) && !(amPm.equals("AM")) ) || 
+        ( (!amPm.equals("pm")) && (!amPm.equals("PM")))) {
+            System.out.println("INVALID DATA");
+        } else if ( amPm.equals("pm") || amPm.equals("PM") ) {
             standardHours = standardHours + 12;
             System.out.println ( "Standard Hours: " + standardHours + ":" + standardMins );
-        }
-        if ( standardHours < 10 ) {
-            System.out.println( "Standard Hours" + standardHours );
+        } else {
+            System.out.println ( "Standard Hours: " + standardHours + ":" + standardMins );
         }
     }
-    
-    
-    
 }

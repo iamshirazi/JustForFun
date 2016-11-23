@@ -37,6 +37,7 @@ public class NumbersToWords2 {
         getNumber();
         
         hundreds = number / 100;
+        teens = number % 100;
         tens = (number / 10) % 10;
         ones = number % 10;
 
@@ -49,7 +50,13 @@ public class NumbersToWords2 {
             hundreds();
             teens();
             tens();
+            if ((number < 110 && number > 100) || (number < 210 && number > 200)
+            || (number < 310 && number > 300) || (number < 410 && number > 400) 
+            || (number < 510 && number > 500) || (number < 610 && number > 600)
+            || (number < 710 && number > 700) || (number < 810 && number > 800)
+            || (number < 910 && number > 900)) {
             ones();
+        }    
         } else if (number >= 1 && number <=9) {
             ones();
         } else if (number <= 0 || number >= 1000) {
