@@ -9,6 +9,7 @@ Description:
  * and open the template in the editor.
  */
 package ca.hdsb.gwss.shirazi.ics3u.u5;
+
 import java.util.Scanner;
 
 /**
@@ -24,39 +25,34 @@ public class StandardTime {
 
         String time;
         int choice;
-        int standardHours;
-        int standardMins;
-        
+
         choice = StandardOrTraditional();
         if (choice > 2 || choice < 1) {
             System.out.println("INVALID, please try again.");
-        } else if (choice == 1 ) {
-        time = getStandardTime();
-        convertHoursToTraditional( time );
+        } else if (choice == 1) {
+            time = getStandardTime();
+            convertHoursToTraditional(time);
         } else {
-        time = getTraditionalTime();
-       
-        standardHours = convertHoursToInteger( time );
-        standardMins =  convertMinsToInteger( time );
-        if ( standardHours < 10 ) {
-        convertHoursToStandardOne( time, standardHours, standardMins );
+            time = getTraditionalTime();
+            convertHoursToStandard(time);
         }
-        }  
     }
+
     public static int StandardOrTraditional() {
-        
+
         // OBJECTS 
         Scanner input = new Scanner(System.in);
-        
+
         // VARIABLES
         int choice;
-                
+
         // INPUT
         System.out.println("Press 1 To Convert Standard Time to Traditional or Press 2 for Traditional time to Standard.");
         choice = input.nextInt();
-        
+
         return choice;
     }
+
     public static String getStandardTime() {
 
         // OBJECTS 
@@ -71,54 +67,50 @@ public class StandardTime {
 
         return time;
     }
-    public static void convertHoursToTraditional( String time ) {
+
+    public static void convertHoursToTraditional(String time) {
 
         // VARIABLES
         boolean pm = false;
-        
+
         // OUTPUT
-        String standardHours = time.substring( 0, 2 );
-        String standardMins = time.substring( 3 ); // 12:34
-        
-        int traditionalHours = Integer.parseInt( standardHours );
-        int traditionalMins = Integer.parseInt( standardMins );
-        
-        if ( traditionalHours > 23 || traditionalHours < 0 || traditionalMins > 59 || traditionalMins < 0) {
+        String standardHours = time.substring(0, 2);
+        String standardMins = time.substring(3); // 12:34
+
+        int traditionalHours = Integer.parseInt(standardHours);
+        int traditionalMins = Integer.parseInt(standardMins);
+
+        if (traditionalHours > 23 || traditionalHours < 0 || traditionalMins > 59 || traditionalMins < 0) {
             System.out.println("INVALID TIME");
-        }
-        else {
-            if ( traditionalHours > 12 ) {
-                pm = true;   
+        } else {
+            if (traditionalHours > 12) {
+                pm = true;
                 traditionalHours = traditionalHours - 12;
-            } 
-            if ( traditionalHours == 12 ) {
-                pm = true; 
-            } 
-            if ( traditionalHours == 00 ) {
+            }
+            if (traditionalHours == 12) {
+                pm = true;
+            }
+            if (traditionalHours == 00) {
                 traditionalHours = 12;
-            } 
-            if ( traditionalMins == 0 ) {
-                System.out.print("Traditional Hours: " + traditionalHours + ":" + standardMins );
-            } 
-            else if ( traditionalMins < 10 && traditionalMins > 0 ) {
+            }
+            if (traditionalMins == 0) {
                 System.out.print("Traditional Hours: " + traditionalHours + ":" + standardMins);
-            } 
-            else if ((traditionalHours <= 23 && traditionalHours > 0) && (traditionalMins <= 59 && traditionalMins >= 0)) {
+            } else if (traditionalMins < 10 && traditionalMins > 0) {
+                System.out.print("Traditional Hours: " + traditionalHours + ":" + standardMins);
+            } else if ((traditionalHours <= 23 && traditionalHours > 0) && (traditionalMins <= 59 && traditionalMins >= 0)) {
                 System.out.print("Traditional Hours: " + traditionalHours + ":" + standardMins);
             }
-            if ( pm ) {
-                System.out.println( " PM" );
-            } 
-            else  {
-                System.out.println( " AM" );
+            if (pm) {
+                System.out.println(" PM");
+            } else {
+                System.out.println(" AM");
             }
         }
     }
-    
+
     // FOR TRADITIONAL TO STANDARD
-    
     public static String getTraditionalTime() {
-        
+
         // OBJECTS 
         Scanner input = new Scanner(System.in);
 
@@ -130,35 +122,32 @@ public class StandardTime {
         time = input.nextLine();
         return time;
     }
-    public static int convertHoursToInteger( String time ) {
-        
-        // CONVERSIAN   
-        String traditionalHours = time.substring( 0, 1 );// 0123456
-        int standardHours = Integer.parseInt( traditionalHours );
-        return standardHours;
-    }
-    public static int convertMinsToInteger( String time ) {
-        
-        // CONVERSIAN
-         String traditionalMins = time.substring( 2, 4 ); // 1:23 am
-         int standardMins = Integer.parseInt( traditionalMins );
-         return standardMins;
-    }
-    public static void convertHoursToStandardOne(String time, int standardHours,
-    int standardMins) {
-        
+
+    public static void convertHoursToStandard(String time) {
+
+        // CONVERSIAN OF HOURS
+        String traditionalHours = time.substring(0, time.indexOf(":"));// 0123456
+        int standardHours = Integer.parseInt(traditionalHours);
+
+        // CONVERSIAN OF MINUTES
+        String traditionalMins = time.substring(time.indexOf(":") + 1, time.indexOf(" ")); // 1:23 am
+        int standardMins = Integer.parseInt(traditionalMins);
+
         // OUTPUT
-        String amPm = time.substring( 5 );
-        
-        if ( standardHours < 1 || standardHours > 12 || standardMins > 59 || 
-        standardMins < 0 || ( !(amPm.equals("am")) && !(amPm.equals("AM")) ) || 
-        ( (!amPm.equals("pm")) && (!amPm.equals("PM")))) {
+        String amPm = time.substring(time.indexOf(" ") + 1).toUpperCase();
+
+        if (standardHours < 1 || standardHours > 12 || standardMins > 59
+                || standardMins < 0 || !("AM".equals(amPm) || "PM".equals(amPm))) {
             System.out.println("INVALID DATA");
-        } else if ( amPm.equals("pm") || amPm.equals("PM") ) {
-            standardHours = standardHours + 12;
-            System.out.println ( "Standard Hours: " + standardHours + ":" + standardMins );
         } else {
-            System.out.println ( "Standard Hours: " + standardHours + ":" + standardMins );
+            if (amPm.equals("PM")) {
+                if (standardHours != 12) {
+                    standardHours = standardHours + 12;
+                }
+                System.out.println("Standard Hours: " + standardHours + ":" + traditionalMins);
+            } else if (standardHours < 10 && amPm.equals("AM")) {
+                System.out.println("Standard Hours: " + standardHours + ":" + traditionalMins);
+            }
         }
     }
 }
