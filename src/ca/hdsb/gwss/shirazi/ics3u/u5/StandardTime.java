@@ -53,6 +53,7 @@ public class StandardTime {
         return choice;
     }
 
+    // FOR STANDARD TO TRADITIONAL
     public static String getStandardTime() {
 
         // OBJECTS 
@@ -80,7 +81,8 @@ public class StandardTime {
         int traditionalHours = Integer.parseInt(standardHours);
         int traditionalMins = Integer.parseInt(standardMins);
 
-        if (traditionalHours > 23 || traditionalHours < 0 || traditionalMins > 59 || traditionalMins < 0) {
+        if (traditionalHours > 23 || traditionalHours < 0 || traditionalMins > 
+            59 || traditionalMins < 0) {
             System.out.println("INVALID TIME");
         } else {
             if (traditionalHours > 12) {
@@ -95,9 +97,11 @@ public class StandardTime {
             }
             if (traditionalMins == 0) {
                 System.out.print("Traditional Hours: " + traditionalHours + ":" + standardMins);
-            } else if (traditionalMins < 10 && traditionalMins > 0) {
+            } 
+            else if (traditionalMins < 10 && traditionalMins > 0) {
                 System.out.print("Traditional Hours: " + traditionalHours + ":" + standardMins);
-            } else if ((traditionalHours <= 23 && traditionalHours > 0) && (traditionalMins <= 59 && traditionalMins >= 0)) {
+            } 
+            else if ((traditionalHours <= 23 && traditionalHours > 0) && (traditionalMins <= 59 && traditionalMins >= 0)) {
                 System.out.print("Traditional Hours: " + traditionalHours + ":" + standardMins);
             }
             if (pm) {
