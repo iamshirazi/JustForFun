@@ -76,6 +76,7 @@ public class RockPaperScissors {
     // OBJECTS
     String outcome = "";        
 
+    
     // VARIABLES
     int wins = 0;
     int losses = 0;
@@ -86,17 +87,17 @@ public class RockPaperScissors {
     if ((computer == 2 && choice == 1) || (computer == 1 && choice == 3 ) ||
        (computer == 3 && choice == 2)) {
          outcome = ("You Lose.");
-         losses = losses + 1;
+         losses++;
     }
     else if ((choice == 2 && computer == 1) || (choice == 1 && computer == 3) ||
         (choice == 3 && computer == 2)) {
          outcome = ("You Win!");
-         wins = wins + 1;
+         wins++;
     } 
     else if ((choice == 1 && computer == 1) || (choice == 2 && computer == 2) ||
          (choice == 3 && computer == 3)) {
          outcome = ("It's a Tie!");
-         ties = ties + 1;
+         ties++;
     }
     System.out.println("Wins:" + wins);
     System.out.println("Losses:" + losses);

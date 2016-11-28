@@ -127,6 +127,9 @@ public class StandardTime {
 
     public static void convertHoursToStandard(String time) {
 
+        // OBJECTS
+        String zero = "0";
+        
         // CONVERSIAN OF HOURS
         String traditionalHours = time.substring(0, time.indexOf(":"));
         int standardHours = Integer.parseInt(traditionalHours);
@@ -144,10 +147,13 @@ public class StandardTime {
         } else if (amPm.equals("PM")) {
             if (standardHours != 12) {
                 standardHours = standardHours + 12;
-            }
-            System.out.println("Standard Hours: " + standardHours + ":" + traditionalMins);
+            } System.out.println("Standard Hours: " + standardHours + ":" + traditionalMins);
+        } else if ( (standardHours <= 9 && amPm.equals("AM")) || (standardHours == 12 && amPm.equals("AM")) ) {
+            if (standardHours == 12) {
+                standardHours = 0;
+            } System.out.println("Standard Hours: " + zero + standardHours + ":" + traditionalMins);
         } else if (standardHours < 10 && amPm.equals("AM")) {
-            System.out.println("Standard Hours: " + standardHours + ":" + traditionalMins);
+          System.out.println("Standard Hours: " + standardHours + ":" + traditionalMins);
         }
     }
 }
