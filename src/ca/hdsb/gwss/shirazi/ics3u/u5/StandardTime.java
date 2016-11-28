@@ -81,8 +81,8 @@ public class StandardTime {
         int traditionalHours = Integer.parseInt(standardHours);
         int traditionalMins = Integer.parseInt(standardMins);
 
-        if (traditionalHours > 23 || traditionalHours < 0 || traditionalMins > 
-            59 || traditionalMins < 0) {
+        if (traditionalHours > 23 || traditionalHours < 0 || traditionalMins
+                > 59 || traditionalMins < 0) {
             System.out.println("INVALID TIME");
         } else {
             if (traditionalHours > 12) {
@@ -97,11 +97,9 @@ public class StandardTime {
             }
             if (traditionalMins == 0) {
                 System.out.print("Traditional Hours: " + traditionalHours + ":" + standardMins);
-            } 
-            else if (traditionalMins < 10 && traditionalMins > 0) {
+            } else if (traditionalMins < 10 && traditionalMins > 0) {
                 System.out.print("Traditional Hours: " + traditionalHours + ":" + standardMins);
-            } 
-            else if ((traditionalHours <= 23 && traditionalHours > 0) && (traditionalMins <= 59 && traditionalMins >= 0)) {
+            } else if ((traditionalHours <= 23 && traditionalHours > 0) && (traditionalMins <= 59 && traditionalMins >= 0)) {
                 System.out.print("Traditional Hours: " + traditionalHours + ":" + standardMins);
             }
             if (pm) {
@@ -130,11 +128,11 @@ public class StandardTime {
     public static void convertHoursToStandard(String time) {
 
         // CONVERSIAN OF HOURS
-        String traditionalHours = time.substring(0, time.indexOf(":"));// 0123456
+        String traditionalHours = time.substring(0, time.indexOf(":"));
         int standardHours = Integer.parseInt(traditionalHours);
 
         // CONVERSIAN OF MINUTES
-        String traditionalMins = time.substring(time.indexOf(":") + 1, time.indexOf(" ")); // 1:23 am
+        String traditionalMins = time.substring(time.indexOf(":") + 1, time.indexOf(" "));
         int standardMins = Integer.parseInt(traditionalMins);
 
         // OUTPUT
@@ -143,15 +141,13 @@ public class StandardTime {
         if (standardHours < 1 || standardHours > 12 || standardMins > 59
                 || standardMins < 0 || !("AM".equals(amPm) || "PM".equals(amPm))) {
             System.out.println("INVALID DATA");
-        } else {
-            if (amPm.equals("PM")) {
-                if (standardHours != 12) {
-                    standardHours = standardHours + 12;
-                }
-                System.out.println("Standard Hours: " + standardHours + ":" + traditionalMins);
-            } else if (standardHours < 10 && amPm.equals("AM")) {
-                System.out.println("Standard Hours: " + standardHours + ":" + traditionalMins);
+        } else if (amPm.equals("PM")) {
+            if (standardHours != 12) {
+                standardHours = standardHours + 12;
             }
+            System.out.println("Standard Hours: " + standardHours + ":" + traditionalMins);
+        } else if (standardHours < 10 && amPm.equals("AM")) {
+            System.out.println("Standard Hours: " + standardHours + ":" + traditionalMins);
         }
     }
 }

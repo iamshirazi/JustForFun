@@ -1,6 +1,6 @@
 /*
 Name: Matthew Shirazi
-Date:  Tuesday November 15, 2016
+Date: Tuesday November 15, 2016
 Version 1.0
 Description:
            Converts numbers to words.
@@ -35,9 +35,7 @@ public class NumbersToWords2 {
 
     public static void main(String[] args) {
 
-       // getNumber();
-        for( int i = 1; i <= 999; i++ ) {
-            number = i;
+            getNumber();
             hundreds = number / 100;
             teens = number % 100;
             tens = (number / 10) % 10;
@@ -56,7 +54,6 @@ public class NumbersToWords2 {
                 ones();
             } else if (number <= 999) {
                 hundreds();
-                //System.out.println( hundreds + " " + tens + " " + ones );
                 if (tens == 0) {
                     ones();
                 } else if (tens == 1) {
@@ -67,21 +64,17 @@ public class NumbersToWords2 {
                 }
             }
             System.out.println();
-        }
     }
-
     public static void getNumber() {
         System.out.println("Enter any number from 1 to 999.");
         number = input.nextInt();
     }
-
     public static void hundreds() {
         digitToUse = hundreds;
         ones();
         System.out.print(" Hundred ");
         digitToUse = ones;
     }
-
     public static void tens() {
         digitToUse = tens;
         switch (tens) {
@@ -91,22 +84,34 @@ public class NumbersToWords2 {
             case 3:
                 System.out.print(" Thirty");
                 break;
+            case 4:
+                ones();
+                System.out.print("ty");
+                break;
             case 5:
                 System.out.print(" Fifty");
                 break;
             case 6:
-            case 7:
-            case 9:
-                digitToUse = ones;
                 ones();
                 System.out.print("ty");
+                break;
+            case 7:
+                ones();
+                System.out.print("ty");
+                break;
+            case 8:
+                ones();
+                System.out.print("y");
+                break;
+            case 9:
+                ones();
+                System.out.print("ty");
+                break;
             default:
                 break;
         }
         digitToUse = ones;
-
     }
-
     public static void teens() {
 
         switch (teens) {
@@ -141,10 +146,9 @@ public class NumbersToWords2 {
                 System.out.print("Nineteen");
                 break;
             default:
-                System.out.print("");
+                break;
         }
     }
-
     public static void ones() {
 
         switch (digitToUse) {
@@ -176,7 +180,7 @@ public class NumbersToWords2 {
                 System.out.print(" Nine");
                 break;
             default:
-                System.out.print("");
+                break;
         }
-    }
+    } 
 }
