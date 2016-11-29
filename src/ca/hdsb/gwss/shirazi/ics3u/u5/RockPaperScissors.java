@@ -28,22 +28,25 @@ public class RockPaperScissors {
         
     // VARIABLES
     int choice;
-    int computer;   
+    int computer;
+    int wins = 0;
+    int losses = 0;
+    int ties = 0;
         
     // INPUT
-    for ( int counter = 1; counter <= 25; counter++) {
-    choice = getWeaponFromUser();  
+    for ( int round = 0; round <= 10; round++ ) {
+    choice = getThrowFromUser(); 
     
     // COMPUTER'S CHOICE
     computer = generateRockPaperScissor();
     System.out.println("Computer's choice:" + computer);
-    // OUTCOME
-    outcome = determineOutcome( choice, computer);
     
-    System.out.println(outcome);    
+    // OUTCOME
+    outcome = determineOutcome( choice, computer, wins, losses, ties );
+    System.out.println( outcome );    
     }
     }
-    public static int getWeaponFromUser() {
+    public static int getThrowFromUser() {
      
     // OBJECTS
     Scanner input = new Scanner(System.in);   
@@ -52,10 +55,11 @@ public class RockPaperScissors {
     int choice;
     
     // INPUT 
-    System.out.println();
-    System.out.print("Press 1 for Rock, 2 for Paper, or 3 for Scissors.");
-    choice = input.nextInt();
-    
+    do {
+        System.out.println("Press 1 for Rock, 2 for Paper, or 3 for Scissors.");
+        choice = input.nextInt();
+    } while( choice != 1 && choice != 2 && choice != 3 );
+
     return choice;
     }
     public static int generateRockPaperScissor() {
@@ -67,37 +71,29 @@ public class RockPaperScissors {
     int computer;
     
     // PROCESSING
-    computer = 1 + number.nextInt(3);
+    computer = number.nextInt(3) + 1;
     
     return computer;    
     }
-    public static String determineOutcome( int choice, int computer ) {
-        
-    // OBJECTS
-    String outcome = "";        
-
+    public static String determineOutcome( int choice, int computer, int wins, int losses, int ties ) {
     
-    // VARIABLES
-    int wins = 0;
-    int losses = 0;
-    int ties = 0;
+    // OBJECT
+    String outcome;    
         
     // OUTPUT   
-    
     if ((computer == 2 && choice == 1) || (computer == 1 && choice == 3 ) ||
        (computer == 3 && choice == 2)) {
-         outcome = ("You Lose.");
-         losses++;
+        outcome = ("You Lose!");
+        losses = losses + 1;
     }
     else if ((choice == 2 && computer == 1) || (choice == 1 && computer == 3) ||
         (choice == 3 && computer == 2)) {
-         outcome = ("You Win!");
-         wins++;
+        outcome = ("You Win!");
+        wins = wins + 1;
     } 
-    else if ((choice == 1 && computer == 1) || (choice == 2 && computer == 2) ||
-         (choice == 3 && computer == 3)) {
-         outcome = ("It's a Tie!");
-         ties++;
+    else {
+        outcome = ("It's a Tie!");
+        ties = ties + 1;
     }
     System.out.println("Wins:" + wins);
     System.out.println("Losses:" + losses);

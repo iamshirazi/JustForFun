@@ -47,8 +47,10 @@ public class StandardTime {
         int choice;
 
         // INPUT
-        System.out.println("Press 1 To Convert Standard Time to Traditional or Press 2 for Traditional time to Standard.");
-        choice = input.nextInt();
+    do {
+    System.out.println("Press 1 To Convert Standard Time to Traditional or Press 2 for Traditional time to Standard.");
+    choice = input.nextInt();
+    } while( choice != 1 && choice != 2 );
 
         return choice;
     }
@@ -62,7 +64,7 @@ public class StandardTime {
         // VARIABLES
         String time;
 
-        // INPUT
+        // INPUT       
         System.out.println("Please enter a Standard Time (hh:mm) ");
         time = input.nextLine();
 
