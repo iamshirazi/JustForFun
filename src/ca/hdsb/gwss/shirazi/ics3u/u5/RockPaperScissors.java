@@ -1,7 +1,7 @@
 /*
 Name: Matthew Shirazi
 Date: Friday November 25, 2016
-Version 1.0
+Version 1.01
 Description:
            The user plays rock paper scissors with the computer and this program
 determines who wins.
