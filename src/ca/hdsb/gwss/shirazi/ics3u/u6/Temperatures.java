@@ -16,7 +16,7 @@ import java.util.Scanner;
  *
  * @author 1shirazimat
  */
-public class Tempuratures {
+public class Temperatures {
 
     /**
      * @param args the command line arguments
@@ -28,6 +28,7 @@ public class Tempuratures {
        
     int[] temps = new int[7];
     
+    
     for (int counter = 0; counter < temps.length; counter++) {
         System.out.println("Temperatures on day " + (counter + 1) + " : ");
         temps[counter] = input.nextInt();
@@ -36,8 +37,7 @@ public class Tempuratures {
     for (int counter = 0; counter < temps.length; counter++) {
         total = temps[counter];
         
-    }
-    System.out.println(temps);
-    }
     
+    }
+    }
 }
