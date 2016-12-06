@@ -55,7 +55,7 @@ public class BubbleSort {
                 }
             }
             passNumber++;
-            //display(data);
+            display(data);
             System.out.println("Number of Passes: " + passNumber);
         }
     }

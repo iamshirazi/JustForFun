@@ -16,6 +16,29 @@ public class SelectionSort {
      */
     public static void main(String[] args) {
     
+        int[] data = new int[10];
+        for (int c = 0; c < data.length - 1; c++) {
+            data[c] = (int) (Math.random() * 1000) + 1;
+        }
+        System.out.print("Data Before Swapping:");
+       // display(data);
+        System.out.println("______________________________________");
+       // selectionSort(data);
+        System.out.print("Data After Swapping:");
+       // display(data);
     }
-    // NEED DATA, INDEX, ONE VALUE, AND INDEX OF ANOTHER VALUE
+    
+    public static void selectionSort( int[] data ) {
+        
+        int swap = 0;
+        int maxValue = 0;
+        
+        for (int pass = 0; pass < data.length; pass++) {
+            for (int z = 0; z < data.length; z++) {
+                
+            
+                
+            }
+        }   
+    }
 }
