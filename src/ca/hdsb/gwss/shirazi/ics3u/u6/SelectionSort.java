@@ -22,13 +22,12 @@ public class SelectionSort {
      */
     public static void main(String[] args) {
 
-        int[] data = new int[100];
+        int[] data = new int[10];
         for (int c = 0; c < data.length - 1; c++) {
             data[c] = (int) (Math.random() * 1000) + 1;
         }
         System.out.print("Data Before Swapping:");
         display(data);
-        System.out.println("______________________________________");
         selectionSort(data);
         System.out.print("Data After Swapping:");
         display(data);
@@ -39,10 +38,9 @@ public class SelectionSort {
        // VARIABLES
         int swaps = 0;
         int comps = 0;
-        int passNumber = 0;
         int indexMaxValue;
 
-        // DETERMINE MAX VALUE
+        // DETERMINES MAX VALUE
         for (int pass = 0; pass < data.length-1; pass++) {
             indexMaxValue = 0;
             for (int z = 1; z < data.length - pass; z++) {
@@ -55,7 +53,7 @@ public class SelectionSort {
             swaps++;
             swap( data, indexMaxValue, data.length - 1 - pass );            
         }
-        System.out.println( "SWAPS: " + swaps + " COMP: " + comps );
+        System.out.println( "SWAPS: " + swaps + " COMPARISONS: " + comps );
     }
 
     public static void swap(int[] data, int i, int j) {
