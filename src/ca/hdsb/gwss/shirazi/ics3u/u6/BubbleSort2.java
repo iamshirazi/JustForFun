@@ -23,9 +23,9 @@ public class BubbleSort2 {
      */
     public static void main(String[] args) {
 
-        int[] data = new int[100];
+        int[] data = new int[10];
         for (int c = 0; c < data.length - 1; c++) {
-            data[c] = (int) (Math.random() * 1000) + 1;
+        data[c] = (int) (Math.random() * 1000) + 1;
         }
         
         System.out.print("Data Before Swapping:");
@@ -35,7 +35,8 @@ public class BubbleSort2 {
         for( int i = 0; i < data.length; i++ ) {
             System.out.println(data[i] + " - The value is at: " + linearSearch( data, data[i] ) );
         }
-        System.out.println("The value is at: " + linearSearch( data, 0 ) );
+        
+        //System.out.println("The value is at: " + linearSearch( data, 0 ) );
     }
 
     public static int linearSearch(int[] data, int searchValue) {
