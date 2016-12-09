@@ -1,21 +1,7 @@
 package ca.hdsb.gwss.shirazi.ics3u.u6;
 
 public class ArrayUtil {
-    
-    public static int max( int[] data  ) {
-        
-        int max = data[0];
-        for (int counter = 0; counter < data.length; counter++) {
-            if (data[counter] > max) {
-                max= data[counter];
-            }
-        }
-    
-        return max;
-    }  
-    
-    
-    
+   
     public static int[] generateRandomArrays( int size, int min, int max ) {
         
         int[] data = new int[size];
@@ -61,4 +47,48 @@ public class ArrayUtil {
         }
         System.out.println();
     }
+    
+    
+     public static int max( int[] data  ) {
+        
+        int maxValue = data[0];
+        for (int counter = 0; counter < data.length; counter++) {
+            if (data[counter] > maxValue) {
+                maxValue= data[counter];
+            }
+        }
+        return maxValue;
+    }  
+    
+     public static void bubbleSort(int[] data) {
+        int swaps = 0;
+        int comps = 0;
+        for (int pass = 0; pass < data.length - 1; pass++) {
+            for (int c = 0; c < (data.length - 1) - pass; c++) {
+                comps++;
+                if (data[c] > data[c + 1]) {
+                    swaps++;
+                    swap( data, c, c+1 );
+                }
+            }
+        }
+        System.out.println( "SWAPS: " + swaps + " COMP: " + comps );
+    }
+    
+    public static void swapBubble(int[] data, int i, int j) {
+        int swap = data[i];
+        data[i] = data[j];
+        data[j] = swap;
+    }
+     
+      public static int min( int[] data  ) {
+        
+        int minValue = data[0];
+        for (int counter = 0; counter < data.length; counter++) {
+            if (data[counter] < minValue) {
+                minValue = data[counter];
+            }
+        }
+        return minValue;
+    }  
 }

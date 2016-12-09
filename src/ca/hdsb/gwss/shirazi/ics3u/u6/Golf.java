@@ -23,23 +23,49 @@ public class Golf {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
-        // OBJECTS
-        Scanner input = new Scanner(System.in);
-
-        int[] scores = new int[18];
-
-        for (int counter = 0; counter < scores.length; counter++) {
-            System.out.println("Score on Hole " + (counter + 1) + " : ");
-            scores[counter] = input.nextInt();
-        }
-        int maxScore = scores[0];
-        for (int counter = 0; counter < scores.length; counter++) {
-            if (scores[counter] > maxScore) {
-                maxScore = scores[counter];
+        int[] data = new int [5];
+        data[0] = 9;
+        data[1] = -12;
+        data[2] = 6;
+        data[3] = 3;
+        data[4] = -10;
+        
+        int minValue = min(data);
+        System.out.println("Min: " + minValue);
+        
+//
+//        // OBJECTS
+//        Scanner input = new Scanner(System.in);
+//
+//        int[] scores = new int [5];
+//        data[0] = 9;
+//        data[1] = -12;
+//        data[2] = 6;
+//        data[3] = 3;
+//        data[4] = -10;
+//
+//       // for (int counter = 0; counter < scores.length; counter++) {
+//          //  System.out.println("Score on Hole " + (counter + 1) + " : ");
+//           // scores[counter] = input.nextInt();
+//        
+//        int maxScore = scores[0];
+//        for (int counter = 0; counter < scores.length; counter++) {
+//            if (scores[counter] > maxScore) {
+//                maxScore = scores[counter];
+//            }
+//        }
+//        System.out.println("Max Score: " + maxScore);
+    }
+    
+    public static int min( int[] data  ) {
+        
+        int minValue = data[0];
+        for (int counter = 0; counter < data.length; counter++) {
+            if (data[counter] < minValue) {
+                minValue = data[counter];
             }
         }
-        System.out.println("Max Score:" + maxScore);
-    }
-
+        return minValue;
+    }  
+    
 }
