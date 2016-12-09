@@ -30,8 +30,8 @@ public class Golf {
         data[3] = 3;
         data[4] = -10;
         
-        int minValue = min(data);
-        System.out.println("Min: " + minValue);
+        int sum = sum(data);
+        System.out.println("Sum: " + sum);
         
 //
 //        // OBJECTS
@@ -57,15 +57,24 @@ public class Golf {
 //        System.out.println("Max Score: " + maxScore);
     }
     
-    public static int min( int[] data  ) {
+//    public static int min( int[] data  ) {
+//        
+//        int minValue = data[0];
+//        for (int counter = 0; counter < data.length; counter++) {
+//            if (data[counter] < minValue) {
+//                minValue = data[counter];
+//            }
+//        }
+//        return minValue;
+//    }  
+//    
+    public static int sum( int[] data) {
         
-        int minValue = data[0];
+    int sum = 0;
         for (int counter = 0; counter < data.length; counter++) {
-            if (data[counter] < minValue) {
-                minValue = data[counter];
-            }
-        }
-        return minValue;
-    }  
+            sum = ( sum + data[counter] );
+        }         
+    return sum;    
+}
     
 }
