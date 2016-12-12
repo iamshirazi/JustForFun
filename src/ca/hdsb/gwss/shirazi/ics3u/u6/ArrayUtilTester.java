@@ -340,14 +340,15 @@ public class ArrayUtilTester {
         ArrayUtil.display(dataSet);
 
         // FIND DATA
-        int location = ArrayUtil.linearSearch(dataSet, searchValue);
+        int searchIndex = ArrayUtil.linearSearch(dataSet, searchValue);
         for (int i = 0; i < dataSet.length - 1; i++) {
              System.out.println(dataSet[i] + " - The value is at: " + ArrayUtil.linearSearch( dataSet, dataSet[i] ) );
         }
+        System.out.println(searchIndex);
         // CONFIRM; the value at index i must be less (or equal) than the value at index i+1
-        //for (int i = 0; i < dataSet.length - 1; i++) {
-           // assert (dataSet[i] == location );
-        //}
+        for (int a = 0; a < dataSet.length - 1; a++) {
+            assert (dataSet[a] == searchIndex );
+        }
         System.out.println("TEST CASE #13A RESULTS - PASSED");
         System.out.println();
         System.out.println();

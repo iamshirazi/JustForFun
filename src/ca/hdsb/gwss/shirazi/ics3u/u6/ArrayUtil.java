@@ -266,5 +266,36 @@ public class ArrayUtil {
         }
         return location;
     }
-      
+          
+          
+    public static int binarySearch( int[] data
+            , int value) {
+    
+    int left = 0;
+    int right = data.length - 1;
+    while (left <= right) {
+        int mid = (int) Math.floor( ( right - left ) / 2 ) + left;
+        if (data[mid] == value) {
+            return mid;
+        } if (value < data[mid]) {
+            right := mid-1;
+        } else {
+            left  := mid+1;
+}
+        
+        
+       public static int binarySearchDouble( double[] data, int value) {
+    
+    double left = 0;
+    doubkle right = data.length - 1;
+    while (left <= right) {
+        double mid = Math.floor( ( right - left ) / 2 ) + left;
+        if (data[mid] == value) {
+            return mid;
+        } if (value < data[mid]) {
+            right := mid-1;
+        } else {
+            left  := mid+1;
+} 
+        
 }

@@ -111,7 +111,7 @@ public class Golf {
   * FINISHED SUM (INT)
   * FINISHED SUM (DOUBLE)
 
-  * 
-  *
+  * FINISHED
+  * FINISHED 
 
   */ 
