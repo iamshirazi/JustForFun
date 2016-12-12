@@ -11,6 +11,8 @@ public class ArrayUtil {
         return data;
     }
     
+    
+    
     public static double[] generateDoubleRandomArrays( int size, double min, double max ) {
         
         double[] data = new double[size];
@@ -19,6 +21,8 @@ public class ArrayUtil {
         }
         return data;
     }
+    
+    
     
     public static int[] generateArithmeticSequence( int size, int start, int increment ) {
         
@@ -30,6 +34,8 @@ public class ArrayUtil {
         return data;
     }
     
+    
+    
     public static double[] generateArithmeticSequenceForDouble( int size, double start, double increment ) {
         
         double[] data = new double[size];
@@ -40,6 +46,8 @@ public class ArrayUtil {
         return data;
     }
 
+    
+    
     public static void selectionSort(int[] data) {
         
        // VARIABLES
@@ -94,6 +102,8 @@ public class ArrayUtil {
         data[j] = swap;
     }
 
+    
+    
      public static void swapDouble(double[] data, int i, int j) {
         double swap = data[i];
         data[i] = data[j];
@@ -108,6 +118,8 @@ public class ArrayUtil {
         }
         System.out.println();
     }
+    
+    
     
     public static void displayData(double[] data) {
 
@@ -129,6 +141,8 @@ public class ArrayUtil {
         return maxValue;
     }  
      
+     
+     
      public static double maxDouble( double[] data  ) {
         
         double maxValue = data[0];
@@ -140,6 +154,8 @@ public class ArrayUtil {
         return maxValue;
     }  
     
+     
+     
      public static void bubbleSort(int[] data) {
         int swaps = 0;
         int comps = 0;
@@ -170,6 +186,8 @@ public class ArrayUtil {
         }
         System.out.println( "SWAPS: " + swaps + " COMP: " + comps );
     }
+     
+     
 
       public static int min( int[] data  ) {
         
@@ -182,7 +200,18 @@ public class ArrayUtil {
         return minValue;
     }
       
+      public static double minDouble( double[] data  ) {
+        
+        double minValue = data[0];
+        for (int counter = 0; counter < data.length; counter++) {
+            if (data[counter] < minValue) {
+                minValue = data[counter];
+            }
+        }
+        return minValue;
+    }  
       
+
       
       public static int average( int[] data  ) {
         int sum = 0;       
@@ -194,6 +223,19 @@ public class ArrayUtil {
         
         return average;
     }
+      
+      
+      
+      public static double averageDouble( double[] data  ) {
+        double sum = 0;       
+        for (int counter = 0; counter < data.length; counter++) {
+             sum  = (sum + data[counter]); 
+        }
+        double averageValue = sum / (data.length);
+        
+        return averageValue;
+    }  
+      
       
       public static int sum( int[] data) {
         
@@ -211,5 +253,18 @@ public class ArrayUtil {
         }         
     return sum;    
 }
+      
+          public static int linearSearch(int[] data, int searchValue) {
+        int location = -1;
+
+        // PROCESSING
+        for (int a = 0; a < data.length; a++) {
+            if (data[a] == searchValue) {
+                location = a;
+                a = data.length;
+            }
+        }
+        return location;
+    }
       
 }

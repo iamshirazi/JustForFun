@@ -16,7 +16,7 @@ public class Average {
      */
     public static void main( String[] args ) {
     
-        int[] data = new int [5];
+        double[] data = new double [5];
         data[0] = 6;
         data[1] = 8;
         data[2] = 2;
@@ -25,16 +25,16 @@ public class Average {
         //10
         
         
-        int average = average(data);
-        System.out.println("Average: " + average);
+        double averageValue = averageDouble(data);
+        System.out.println("Average: " + averageValue);
     }
         
-    public static int average( int[] data  ) {
-        int sum = 0;       
+    public static double averageDouble( double[] data  ) {
+        double sum = 0;       
         for (int counter = 0; counter < data.length; counter++) {
              sum  = (sum + data[counter]); 
         }
-        int average = sum / (data.length);
+        double average = sum / (data.length);
         
         return average;
     }  

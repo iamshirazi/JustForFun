@@ -21,17 +21,20 @@ public class Golf {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-//        double[] data = new double [5];
-//        data[0] = 9.8;
-//        data[1] = -12.4;
-//        data[2] = 6.3;
-//        data[3] = 3;
-//        data[4] = -10;
+        int searchValue = 0;
+        int[] data = new int [5];
+        data[0] = 9;
+        data[1] = -12;
+        data[2] = -600;
+        data[3] = 3;
+        data[4] = -10;
         
-        //double sum = sumDouble(data);
-        //System.out.println("Sum: " + sum);
         
-               
+        for (int i = 0; i < data.length; i++) {
+        int location = linearSearch(data, searchValue);
+        System.out.println(data[i] + " - The value is at: " + linearSearch( data, data[i] ) );
+        }
+    }           
 //
 //        // OBJECTS
 //        Scanner input = new Scanner(System.in);
@@ -55,10 +58,10 @@ public class Golf {
 //        }
 //        System.out.println("Max Score: " + maxScore);
 //    }
-    
-//    public static int min( int[] data  ) {
+//    
+//    public static double minDouble( double[] data  ) {
 //        
-//        int minValue = data[0];
+//        double minValue = data[0];
 //        for (int counter = 0; counter < data.length; counter++) {
 //            if (data[counter] < minValue) {
 //                minValue = data[counter];
@@ -66,16 +69,29 @@ public class Golf {
 //        }
 //        return minValue;
 //    }  
-//    
-//   public static double sumDouble( double[] data) {
-//        
-//    double sum = 0;
-//        for (int counter = 0; counter < data.length; counter++) {
-//            sum = ( sum + data[counter] );
-//        }         
-//    return sum;    
+////    
+////   public static double sumDouble( double[] data) {
+////        
+////    double sum = 0;
+////        for (int counter = 0; counter < data.length; counter++) {
+////            sum = ( sum + data[counter] );
+////        }         
+////    return sum;   
+//}
+    
+    public static int linearSearch(int[] data, int searchValue) {
+        int location = -1;
+
+        // PROCESSING
+        for (int a = 0; a < data.length; a++) {
+            if (data[a] == searchValue) {
+                location = a;
+                a = data.length;
+            }
+        }
+        return location;
+    }
 }
-} 
 
  /* FINISHED SELECTION SORT (INT/ASCENDING)
   * FINISHED SELECTION SORT (DOUBLE/ASCENDING)
@@ -84,12 +100,18 @@ public class Golf {
   * FINISHED MAX (DOUBLE)
 
   * FINISHED MIN (INT)
+  * FINISHED MIN (DOUBLE)
 
   * FINISHED AVERAGE (INT)
+  * FINISHED AVERAGE (DOUBLE)
 
   * FINISHED BUBBLE SORT (INT/ASCENDING)
   * FINISHED BUBBLE SORT (DOUBLE/ASCENDING)
 
   * FINISHED SUM (INT)
   * FINISHED SUM (DOUBLE)
+
+  * 
+  *
+
   */ 

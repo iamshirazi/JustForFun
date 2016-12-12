@@ -3,7 +3,7 @@ package ca.hdsb.gwss.shirazi.ics3u.u6;
 public class ArrayUtilTester {
 
     public static void main(String[] args) {
-
+        int searchValue = 0;
         int[] dataSet;
         double[] data;
 
@@ -190,11 +190,38 @@ public class ArrayUtilTester {
         System.out.println();
         System.out.println();
         
+        
+        //////////////////////////////START OF TEST 8A///////////////////////////////////
 
-        //////////////////////////////START OF TEST 8A///////////////////////////////////  
+        System.out.println("-------------------------------");
+        System.out.println("TEST CASE #8A      : Min (double)");
+        System.out.println("PRE CONDITION      : unsorted array; + and - numbers");
+        System.out.println("POST CONDITION     : array sorted, lowest to highest");
+
+        // DISPLAY ARRAY
+        System.out.println("DATA: ");
+        data = ArrayUtil.generateArithmeticSequenceForDouble(10, 0, 5);
+        ArrayUtil.displayData(data);
+
+        // SORT DATA
+        double minDoubleValue = ArrayUtil.minDouble(data);
+        System.out.println("Min: " + minDoubleValue);
+
+        // CONFIRM; average is median of numbers
+        ArrayUtil.minDouble(data);
+
+        // CHECK
+        assert (minDoubleValue == data[0]);
+        
+        System.out.println("TEST CASE #8A RESULTS - PASSED");
+        System.out.println();
+        System.out.println();
+        
+        
+        //////////////////////////////START OF TEST 9A///////////////////////////////////  
         
         System.out.println("-------------------------------");
-        System.out.println("TEST CASE #8A      : Average (int)");
+        System.out.println("TEST CASE #9A      : Average (int)");
         System.out.println("PRE CONDITION      : unsorted array; + and - numbers");
         System.out.println("POST CONDITION     : array sorted, lowest to highest");
 
@@ -210,18 +237,45 @@ public class ArrayUtilTester {
         // CONFIRM; average is median of numbers
         ArrayUtil.average(dataSet);
 
-        //assert (average == (( (dataSet[0] + dataSet[dataSet.length-1]) / 2)));
+        assert (average == (( (dataSet[0] + dataSet[dataSet.length-1]) / 2)));
         System.out.println("Average (check): " + (dataSet.length * ((dataSet[0] + dataSet[dataSet.length-1]) / 2) / dataSet.length ));
         
-        System.out.println("TEST CASE #8A RESULTS - PASSED");
+        System.out.println("TEST CASE #9A RESULTS - PASSED");
+        System.out.println();
+        System.out.println();
+        
+        
+        //////////////////////////////START OF TEST 10A///////////////////////////////////  
+        
+        System.out.println("-------------------------------");
+        System.out.println("TEST CASE #10A     : Average (double)");
+        System.out.println("PRE CONDITION      : unsorted array; + and - numbers");
+        System.out.println("POST CONDITION     : array sorted, lowest to highest");
+
+        // DISPLAY ARRAY
+        System.out.println("DATA: ");
+        data = ArrayUtil.generateArithmeticSequenceForDouble(10, 0, 5);
+        ArrayUtil.displayData(data);
+
+        // SORT DATA
+        double averageValue = ArrayUtil.averageDouble(data);
+        System.out.println("Average: " + averageValue);
+
+        // CONFIRM; average is median of numbers
+        ArrayUtil.averageDouble(data);
+
+        assert (averageValue == (( (data[0] + data[data.length-1]) / 2)));
+        System.out.println("Average (check): " + (data.length * ((data[0] + data[data.length-1]) / 2) / data.length ));
+        
+        System.out.println("TEST CASE #10A RESULTS - PASSED");
         System.out.println();
         System.out.println();
 
         
-        //////////////////////////////START OF TEST 9A///////////////////////////////////
+        //////////////////////////////START OF TEST 11A///////////////////////////////////
         
         System.out.println("-------------------------------");
-        System.out.println("TEST CASE #9A      : Sum (int)");
+        System.out.println("TEST CASE #11A      : Sum (int)");
         System.out.println("PRE CONDITION      : unsorted array; + and - numbers");
         System.out.println("POST CONDITION     : array sorted, lowest to highest");
 
@@ -241,15 +295,15 @@ public class ArrayUtilTester {
         
         assert (sumCheck == sum);
         
-        System.out.println("TEST CASE #9A RESULTS - PASSED");
+        System.out.println("TEST CASE #11A RESULTS - PASSED");
         System.out.println();
         System.out.println();
 
         
-        //////////////////////////////START OF TEST 10A///////////////////////////////////
+        //////////////////////////////START OF TEST 12A///////////////////////////////////
         
         System.out.println("-------------------------------");
-        System.out.println("TEST CASE #10A      : Sum (double)");
+        System.out.println("TEST CASE #12A      : Sum (double)");
         System.out.println("PRE CONDITION      : unsorted array; + and - numbers");
         System.out.println("POST CONDITION     : array sorted, lowest to highest");
 
@@ -268,13 +322,34 @@ public class ArrayUtilTester {
         
         assert (sumDoubleCheck == sumDouble);
         
-        System.out.println("TEST CASE #10A RESULTS - PASSED");
+        System.out.println("TEST CASE #12A RESULTS - PASSED");
         System.out.println();
         System.out.println();
         
         
-        //////////////////////////////START OF TEST 11A///////////////////////////////////
-        
-        
+        //////////////////////////////START OF TEST 13A///////////////////////////////////
+
+        System.out.println("-------------------------------");
+        System.out.println("TEST CASE #13A     : Linear Search (int)");
+        System.out.println("PRE CONDITION      : unsorted array; + and - numbers");
+        System.out.println("POST CONDITION     : array sorted, lowest to highest");
+
+        // DISPLAY ARRAY
+        System.out.println("DATA: ");
+        dataSet = ArrayUtil.generateArithmeticSequence(100, -99, 99);
+        ArrayUtil.display(dataSet);
+
+        // FIND DATA
+        int location = ArrayUtil.linearSearch(dataSet, searchValue);
+        for (int i = 0; i < dataSet.length - 1; i++) {
+             System.out.println(dataSet[i] + " - The value is at: " + ArrayUtil.linearSearch( dataSet, dataSet[i] ) );
+        }
+        // CONFIRM; the value at index i must be less (or equal) than the value at index i+1
+        //for (int i = 0; i < dataSet.length - 1; i++) {
+           // assert (dataSet[i] == location );
+        //}
+        System.out.println("TEST CASE #13A RESULTS - PASSED");
+        System.out.println();
+        System.out.println();
     }
 }
