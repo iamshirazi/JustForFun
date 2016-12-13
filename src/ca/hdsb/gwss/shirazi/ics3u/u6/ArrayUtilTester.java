@@ -437,7 +437,7 @@ public class ArrayUtilTester {
         //////////////////////////////START OF TEST 17A///////////////////////////////////  
         
         System.out.println("-------------------------------");
-        System.out.println("TEST CASE #17A      : Average (int)");
+        System.out.println("TEST CASE #17A     : Average (int)");
         System.out.println("PRE CONDITION      : sorted array; + and - numbers");
         System.out.println("POST CONDITION     : array sorted, lowest to highest");
 
@@ -456,9 +456,7 @@ public class ArrayUtilTester {
         assert (average == (( (dataSet[0] + dataSet[dataSet.length-1]) / 2)));
         System.out.println("Average (check): " + (dataSet.length * ((dataSet[0] + dataSet[dataSet.length-1]) / 2) / dataSet.length ));
         
-        System.out.println("TEST CASE #17A RESULTS - PASSED");
-        System.out.println();
-        System.out.println();
+        System.out.println("TEST CASE #17A RESULTS - PASSED \n\n");
         
         
         //////////////////////////////START OF TEST 18A///////////////////////////////////  

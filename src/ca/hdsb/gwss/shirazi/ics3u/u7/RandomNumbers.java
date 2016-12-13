@@ -5,6 +5,7 @@
  */
 package ca.hdsb.gwss.shirazi.ics3u.u7;
 
+import ca.hdsb.gwss.shirazi.ics3u.u6.ArrayUtil;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -21,25 +22,34 @@ public class RandomNumbers {
      * @throws java.io.FileNotFoundException
      */
     public static void main(String[] args) throws FileNotFoundException {
-        
-        int size = 0;
-        int[] data = new int[size];
-        
-        for (int c = 0; c < data.length - 1; c++) {
-        data[c] = (int) (Math.random() * 1000) + 1;
-        }
-    //  WRITE NUMBER FILE
-        File file = new File("numbers.txt");
-        Scanner input = new Scanner(file);
-        PrintWriter output = new PrintWriter( file );
 
-        for (int i = 0; i <data.length; i++){
-        output.write( data[i] );
-        } output.close();
-    // READ FILE
-        while (input.hasNext()) {
-        System.out.println(input.nextLine());
+        File file = new File("numbers.txt");
+        PrintWriter output = new PrintWriter( file );
+        
+        for (int c = 0; c < 100; c++) {            
+            output.println( (int) (Math.random() * 1000) );            
+        }                
+        output.close();
+        
+        
+        Scanner input = new Scanner( file );
+        
+        int n = 0;
+        while( input.hasNext() ) {
+            n++;
+            input.nextLine();        
         }
-        input.close(); 
-    } 
+        
+        System.out.println( "Numer of Numbers: " + n );
+        
+        int[] data = new int[n];
+        input = new Scanner( file );
+        
+        n = 0;
+        while( input.hasNext() ) {
+            data[n] = Integer.parseInt( input.nextLine() );
+            n++;      
+        }
+        ArrayUtil.display(data);
+    }
 }
