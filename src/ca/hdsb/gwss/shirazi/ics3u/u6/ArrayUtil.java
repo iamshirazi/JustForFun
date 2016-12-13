@@ -23,6 +23,41 @@ public class ArrayUtil {
     }
     
     
+    public static String[] generateStringArray() {
+        
+        String[] dataString = new String[26];
+        
+        dataString[0] = "A";
+        dataString[1] = "Z";
+        dataString[2] = "G";
+        dataString[3] = "F";
+        dataString[4] = "B";
+        dataString[5] = "X";
+        dataString[6] = "Q";
+        dataString[7] = "S";
+        dataString[8] = "R";
+        dataString[9] = "T";
+        dataString[10] = "Y";
+        dataString[11] = "U";
+        dataString[12] = "I";
+        dataString[13] = "C";
+        dataString[14] = "H";
+        dataString[15] = "D";
+        dataString[16] = "E";
+        dataString[17] = "J";
+        dataString[18] = "K";
+        dataString[19] = "M";
+        dataString[20] = "L";
+        dataString[21] = "N";
+        dataString[22] = "P";
+        dataString[23] = "O";
+        dataString[24] = "V";
+        dataString[25] = "W";
+
+        return dataString;
+    }
+    
+    
     
     public static int[] generateArithmeticSequence( int size, int start, int increment ) {
         
@@ -72,6 +107,30 @@ public class ArrayUtil {
     }
     
     
+    public static void selectionSortBackward(int[] data) {
+        
+       // VARIABLES
+        int swaps = 0;
+        int comps = 0;
+        int indexMaxValue;
+
+        // DETERMINES MAX VALUE
+        for (int pass = 0; pass < data.length-1; pass++) {
+            indexMaxValue = 0;
+            for (int z = 1; z < data.length - pass; z++) {
+                comps++;
+                if (data[indexMaxValue] > data[z]) {
+                    indexMaxValue = z;
+                }
+            }
+            // SWAP
+            swaps++;
+            swap( data, indexMaxValue, data.length - 1 - pass );            
+        }
+        System.out.println( "SWAPS: " + swaps + " COMPARISONS: " + comps );
+    }
+    
+    
     public static void selectionSortDouble(double[] data) {
         
        // VARIABLES
@@ -95,6 +154,80 @@ public class ArrayUtil {
         System.out.println( "SWAPS: " + swaps + " COMPARISONS: " + comps );
     }
     
+    
+    public static void selectionSortDoubleBackward(double[] data) {
+        
+       // VARIABLES
+        double swaps = 0;
+        double comps = 0;
+        int indexMaxValue;
+
+        // DETERMINES MAX VALUE
+        for (int pass = 0; pass < data.length-1; pass++) {
+            indexMaxValue = 0;
+            for (int z = 1; z < data.length - pass; z++) {
+                comps++;
+                if (data[indexMaxValue] > data[z]) {
+                    indexMaxValue = z;
+                }
+            }
+            // SWAP
+            swaps++;
+            swapDouble( data, indexMaxValue, data.length - 1 - pass );            
+        }
+        System.out.println( "SWAPS: " + swaps + " COMPARISONS: " + comps );
+    }
+    
+    
+    public static void selectionSortString(String[] data) {
+        
+       // VARIABLES
+        int swaps = 0;
+        int comps = 0;
+        int indexMaxValue;
+
+        // DETERMINES MAX VALUE
+        for (int pass = 0; pass < data.length-1; pass++) {
+            indexMaxValue = 0;
+            for (int z = 1; z < data.length - pass; z++) {
+                comps++;
+                if (data[indexMaxValue].compareTo(data[z]) < 0) {
+                    indexMaxValue = z;
+                }
+            }
+            // SWAP
+            swaps++;
+            swapString( data, indexMaxValue, data.length - 1 - pass );            
+        }
+        System.out.println( "SWAPS: " + swaps + " COMPARISONS: " + comps );
+    }
+    
+    
+    
+    public static void selectionSortStringBackward(String[] data) {
+        
+       // VARIABLES
+        int swaps = 0;
+        int comps = 0;
+        int indexMaxValue;
+
+        // DETERMINES MAX VALUE
+        for (int pass = 0; pass < data.length-1; pass++) {
+            indexMaxValue = 0;
+            for (int z = 1; z < data.length - pass; z++) {
+                comps++;
+                if (data[indexMaxValue].compareTo(data[z]) > 0) {
+                    indexMaxValue = z;
+                }
+            }
+            // SWAP
+            swaps++;
+            swapString( data, indexMaxValue, data.length - 1 - pass );            
+        }
+        System.out.println( "SWAPS: " + swaps + " COMPARISONS: " + comps );
+    }
+    
+    
 
     public static void swap(int[] data, int i, int j) {
         int swap = data[i];
@@ -110,6 +243,13 @@ public class ArrayUtil {
         data[j] = swap;
     }
     
+     
+      public static void swapString(String[] data, int i, int j) {
+        String swap = data[i];
+        data[i] = data[j];
+        data[j] = swap;
+    }
+     
     
     public static void display(int[] data) {
 
@@ -122,6 +262,15 @@ public class ArrayUtil {
     
     
     public static void displayData(double[] data) {
+
+        for (int c = 0; c < data.length; c++) {
+            System.out.print(" " + data[c]);
+        }
+        System.out.println();
+    }
+    
+    
+    public static void displayString(String[] data) {
 
         for (int c = 0; c < data.length; c++) {
             System.out.print(" " + data[c]);
@@ -172,6 +321,23 @@ public class ArrayUtil {
     }
      
      
+     public static void bubbleSortBackward(int[] data) {
+        int swaps = 0;
+        int comps = 0;
+        for (int pass = 0; pass < data.length - 1; pass++) {
+            for (int c = 0; c < (data.length - 1) - pass; c++) {    
+                comps++;
+                if (data[c] < data[c + 1]) {
+                    swaps++;
+                    swap( data, c, c+1 );
+                }
+            }
+        }
+        System.out.println( "SWAPS: " + swaps + " COMP: " + comps );
+    }
+     
+     
+     
      public static void bubbleSortDouble(double[] data) {
         double swaps = 0;
         double comps = 0;
@@ -188,7 +354,54 @@ public class ArrayUtil {
     }
      
      
+     public static void bubbleSortDoubleBackward(double[] data) {
+        double swaps = 0;
+        double comps = 0;
+        for (int pass = 0; pass < data.length - 1; pass++) {
+            for (int c = 0; c < (data.length - 1) - pass; c++) {    
+                comps++;
+                if (data[c] < data[c + 1]) {
+                    swaps++;
+                    swapDouble( data, c, c+1 );
+                }
+            }
+        }
+        System.out.println( "SWAPS: " + swaps + " COMP: " + comps );
+    }
+     
 
+     public static void bubbleSortString(String[] data) {
+        int swaps = 0;
+        int comps = 0;
+        for (int pass = 0; pass < data.length - 1; pass++) {
+            for (int c = 0; c < (data.length - 1) - pass; c++) {    
+                comps++;
+                if (data[c].compareTo(data[c + 1]) > 0) {
+                    swaps++;
+                    swapString( data, c, c+1 );
+                }
+            }
+        }
+        System.out.println( "SWAPS: " + swaps + " COMP: " + comps );
+    }
+     
+     
+     public static void bubbleSortStringBackward(String[] data) {
+        int swaps = 0;
+        int comps = 0;
+        for (int pass = 0; pass < data.length - 1; pass++) {
+            for (int c = 0; c < (data.length - 1) - pass; c++) {    
+                comps++;
+                if (data[c].compareTo(data[c + 1]) < 0) {
+                    swaps++;
+                    swapString( data, c, c+1 );
+                }
+            }
+        }
+        System.out.println( "SWAPS: " + swaps + " COMP: " + comps );
+    }
+     
+     
       public static int min( int[] data  ) {
         
         int minValue = data[0];
@@ -199,6 +412,8 @@ public class ArrayUtil {
         }
         return minValue;
     }
+      
+      
       
       public static double minDouble( double[] data  ) {
         
@@ -265,37 +480,55 @@ public class ArrayUtil {
             }
         }
         return location;
-    }
+    } 
+      
+    
+    public static double linearSearchDouble(double[] data, double searchValue) {
+        double location = -1;
+
+        // PROCESSING
+        for (int a = 0; a < data.length; a++) {
+            if (data[a] == searchValue) {
+                location = a;
+                a = data.length;
+            }
+        }
+        return location;
+    }        
+            
           
-          
-    public static int binarySearch( int[] data
-            , int value) {
+    public static int binarySearch( int[] data, int value) {
     
     int left = 0;
     int right = data.length - 1;
     while (left <= right) {
-        int mid = (int) Math.floor( ( right - left ) / 2 ) + left;
+        int mid = (int) (Math.floor( ( right - left ) / 2 ) + left);
         if (data[mid] == value) {
             return mid;
         } if (value < data[mid]) {
-            right := mid-1;
+            right = mid-1;
         } else {
-            left  := mid+1;
+            left  = mid+1;
 }
+}
+    return -1;
+}    
         
         
-       public static int binarySearchDouble( double[] data, int value) {
+       public static double binarySearchDouble( double[] data, double value) {
     
     double left = 0;
-    doubkle right = data.length - 1;
+    double right = data.length - 1;
     while (left <= right) {
-        double mid = Math.floor( ( right - left ) / 2 ) + left;
+        int mid = (int) (Math.floor( ( right - left ) / 2 ) + left);
         if (data[mid] == value) {
             return mid;
         } if (value < data[mid]) {
-            right := mid-1;
+            right = mid-1;
         } else {
-            left  := mid+1;
-} 
-        
+            left  = mid+1;
+}         
+}
+    return -1;
+}
 }

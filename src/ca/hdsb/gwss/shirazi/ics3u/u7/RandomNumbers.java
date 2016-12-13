@@ -6,6 +6,8 @@
 package ca.hdsb.gwss.shirazi.ics3u.u7;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -16,22 +18,28 @@ public class RandomNumbers {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.FileNotFoundException
      */
-    public static void main(String[] args) {
-    
+    public static void main(String[] args) throws FileNotFoundException {
+        
+        int size = 0;
+        int[] data = new int[size];
+        
+        for (int c = 0; c < data.length - 1; c++) {
+        data[c] = (int) (Math.random() * 1000) + 1;
+        }
+    //  WRITE NUMBER FILE
         File file = new File("numbers.txt");
         Scanner input = new Scanner(file);
-        
-        int n = 0;
-        int[] data = new int[n];
-        int i = 0;
-        input = new Scanner(file);
+        PrintWriter output = new PrintWriter( file );
+
+        for (int i = 0; i <data.length; i++){
+        output.write( data[i] );
+        } output.close();
+    // READ FILE
         while (input.hasNext()) {
-            data[i] = Integer.parseInt(input.nextLine());
-            n++;
-            input.nextLine();
+        System.out.println(input.nextLine());
         }
-        
-    }
-    
+        input.close(); 
+    } 
 }
