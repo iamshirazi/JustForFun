@@ -515,6 +515,26 @@ public class ArrayUtil {
         }
         return -1;
     }
+    
+    
+    public static double binarySearchDoubleBackward(double[] data, double value) {
+
+        double left = 0;
+        double right = data.length - 1;
+        while (left <= right) {
+            int mid = (int) (Math.floor((right - left) / 2) + left);
+            if (data[mid] == value) {
+                return mid;
+            }
+            if (value > data[mid]) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return -1;
+    }
+    
 
     public static double binarySearchString(String[] data, String value) {
 
