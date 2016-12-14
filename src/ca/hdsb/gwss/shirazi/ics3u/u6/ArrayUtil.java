@@ -43,6 +43,67 @@ public class ArrayUtil {
         }
         return data;
     }
+    
+    
+    
+    public static int[] generateArithmeticSequenceBackward(int size, int start, int increment) {
+
+        int[] data = new int[size];
+        for (int c = 0; c < data.length; c++) {
+            data[c] = start;
+            start = start - increment;
+        }
+        return data;
+    }
+    
+    
+    
+    public static double[] generateArithmeticSequenceDoubleBackward(int size, double start, double increment) {
+
+        double[] data = new double[size];
+        for ( int c = 0; c < data.length; c++) {
+            data[c] = start;
+            start = start - increment;
+        }
+        return data;
+    }
+    
+    
+    public static String[] generateArithmeticSequenceStringBackward() {
+
+        String[] dataString = new String[26];
+
+        dataString[0] = "Z";
+        dataString[1] = "Y";
+        dataString[2] = "X";
+        dataString[3] = "W";
+        dataString[4] = "V";
+        dataString[5] = "U";
+        dataString[6] = "T";
+        dataString[7] = "S";
+        dataString[8] = "R";
+        dataString[9] = "Q";
+        dataString[10] = "P";
+        dataString[11] = "O";
+        dataString[12] = "N";
+        dataString[13] = "M";
+        dataString[14] = "L";
+        dataString[15] = "K";
+        dataString[16] = "J";
+        dataString[17] = "I";
+        dataString[18] = "H";
+        dataString[19] = "G";
+        dataString[20] = "F";
+        dataString[21] = "E";
+        dataString[22] = "D";
+        dataString[23] = "C";
+        dataString[24] = "B";
+        dataString[25] = "A";
+
+        return dataString;
+    }
+    
+    
 
     public static double[] generateArithmeticSequenceForDouble(int size, double start, double increment) {
 
@@ -497,6 +558,25 @@ public class ArrayUtil {
         }
         return -1;
     }
+    
+    
+    public static int binarySearchBackward(int[] data, int value) {
+
+        int right = 0;
+        int left = data.length - 1;
+        while (left >= right) {
+            int mid = (int) (Math.floor((left - right) / 2) + right);
+            if (data[mid] == value) {
+                return mid;
+            }
+            if (value > data[mid]) {
+                left = mid - 1;
+            } else {
+                right = mid + 1;
+            }
+        }
+        return -1;
+    }
 
     public static double binarySearchDouble(double[] data, double value) {
 
@@ -519,17 +599,17 @@ public class ArrayUtil {
     
     public static double binarySearchDoubleBackward(double[] data, double value) {
 
-        double left = 0;
-        double right = data.length - 1;
-        while (left <= right) {
-            int mid = (int) (Math.floor((right - left) / 2) + left);
+        double right = 0;
+        double left = data.length - 1;
+        while (left >= right) {
+            int mid = (int) (Math.floor((left - right) / 2) + right);
             if (data[mid] == value) {
                 return mid;
             }
             if (value > data[mid]) {
-                right = mid - 1;
+                left = mid - 1;
             } else {
-                left = mid + 1;
+                right = mid + 1;
             }
         }
         return -1;
@@ -554,4 +634,24 @@ public class ArrayUtil {
         return -1;
     }
 
+    
+    public static double binarySearchStringBackward(String[] data, String value) {
+
+        int right = 0;
+        int left = data.length - 1;
+        while (left >= right) {
+            int mid = (int) (Math.floor((left - right) / 2) + right);
+            if (data[mid].equals(value)) {
+                return mid;
+            }
+            if (value.compareTo(data[mid]) < 0) {
+                left = mid - 1;
+            } else {
+                right = mid + 1;
+            }
+        }
+        return -1;
+    }
+    
+    
 }

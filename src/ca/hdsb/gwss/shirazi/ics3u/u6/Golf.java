@@ -21,21 +21,22 @@ public class Golf {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int searchValue = 0;
-        double[] data = new double [20];
+        int size = 100;
+        double start = 99;
+        double increment = 1;
+                
+        int value = 0;
+        double[] data = generateArithmeticSequenceBackward(size, start, increment);
+        System.out.print("Data: ");
+        display(data);
         
-        for (int c = 0; c < data.length - 1; c++) {
-            data[c] = (double) (Math.random() * 20) + 1;
+        for (int i = 0; i < data.length; i++) {
+        double mid = binarySearchDoubleBackward(data, value);    
+        value++;    
+        System.out.println("Search Value at " + i + " is " + mid);
         }
-        System.out.print("Data Before Swapping:");
-        display(data);
-        selectionSortDoubleBackward(data);
-        System.out.print("Data After Swapping:");
-        display(data);
-        
-        
-        }  
-        
+         
+    }
 //
 //        // OBJECTS
 //        Scanner input = new Scanner(System.in);
@@ -100,39 +101,70 @@ public class Golf {
         }
         System.out.println();
     }
-    
-    
-    public static void selectionSortDoubleBackward(double[] data) {
-        
-       // VARIABLES
-        double swaps = 0;
-        double comps = 0;
-        int indexMaxValue;
+     
 
-        // DETERMINES MAX VALUE
-        for (int pass = 0; pass < data.length-1; pass++) {
-            indexMaxValue = 0;
-            for (int z = 1; z < data.length - pass; z++) {
-                comps++;
-                if (data[indexMaxValue] > data[z]) {
-                    indexMaxValue = z;
-                }
-            }
-            // SWAP
-            swaps++;
-            swapDouble( data, indexMaxValue, data.length - 1 - pass );            
+    
+    
+//    public static void selectionSortDoubleBackward(double[] data) {
+//        
+//       // VARIABLES
+//        double swaps = 0;
+//        double comps = 0;
+//        int indexMaxValue;
+//
+//        // DETERMINES MAX VALUE
+//        for (int pass = 0; pass < data.length-1; pass++) {
+//            indexMaxValue = 0;
+//            for (int z = 1; z < data.length - pass; z++) {
+//                comps++;
+//                if (data[indexMaxValue] > data[z]) {
+//                    indexMaxValue = z;
+//                }
+//            }
+//            // SWAP
+//            swaps++;
+//            swapDouble( data, indexMaxValue, data.length - 1 - pass );            
+//        }
+//        System.out.println( "SWAPS: " + swaps + " COMPARISONS: " + comps );
+//    }
+//    
+//    public static void swapDouble(double[] data, int i, int j) {
+//        double swap = data[i];
+//        data[i] = data[j];
+//        data[j] = swap;
+//    }
+//    
+//}
+     public static double[] generateArithmeticSequenceBackward(int size, double start, double increment) {
+
+        double[] data = new double[size];
+        for ( int c = 0; c < data.length; c++) {
+            data[c] = start;
+            start = start - increment;
         }
-        System.out.println( "SWAPS: " + swaps + " COMPARISONS: " + comps );
+        return data;
     }
-    
-    public static void swapDouble(double[] data, int i, int j) {
-        double swap = data[i];
-        data[i] = data[j];
-        data[j] = swap;
+     
+     
+     
+     public static double binarySearchDoubleBackward(double[] data, double value) {
+
+        double right = 0;
+        double left = data.length - 1;
+        while (left >= right) {
+            int mid = (int) (Math.floor((left - right) / 2) + right);
+            if (data[mid] == value) {
+                return mid;
+            }
+            if (value > data[mid]) {
+                left = mid - 1;
+            } else {
+                right = mid + 1;
+            }
+        }
+        return -1;
     }
-    
-}
- 
+}     
 
  /* FINISHED SELECTION SORT (INT/ASCENDING)
   * FINISHED SELECTION SORT (DOUBLE/ASCENDING)
@@ -160,15 +192,15 @@ public class Golf {
   * FINISHED SUM (INT)
   * FINISHED SUM (DOUBLE)
 
-  * FINISHED LINEAR SEARCH (INT)
-  * FINISHED LINEAR SEARCH (DOUBLE)
-  * FINISHED LINEAR SEARCH (STRING)
+  * HELP LINEAR SEARCH (INT)
+  * HELP LINEAR SEARCH (DOUBLE)
+  * HELP LINEAR SEARCH (STRING)
 
   * FINISHED BINARY SEARCH (INT/ASCENDING)
   * FINISHED BINARY SEARCH (DOUBLE/ASCENDING)
-  * FINISHED BINARY SEARCH (STRING/ASCENDING)
-  *
-  *
-  *
+  * HELP BINARY SEARCH (STRING/ASCENDING)
+  * FINISHED BINARY SEARCH (INT/DESCENDING)
+  * FINISHED BINARY SEARCH (DOUBLE/DESCENDING)
+  * HELP BINARY SEARCH (STRING/DESCENDING
 
   */ 

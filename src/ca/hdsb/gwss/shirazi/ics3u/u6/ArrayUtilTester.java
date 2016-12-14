@@ -5,9 +5,7 @@ public class ArrayUtilTester {
     public static void main(String[] args) {
         
         int searchValue = 0;
-        int[] dataSet;
-        double[] data;
-        
+        double search = 0;
         
 
         System.out.println("-------------------------------");
@@ -17,7 +15,7 @@ public class ArrayUtilTester {
 
         // DISPLAY ARRAY
         System.out.println("DATA BEFORE: ");
-        dataSet = ArrayUtil.generateRandomArrays(100, -99, 99);
+        int[] dataSet = ArrayUtil.generateRandomArrays(100, -99, 99);
         ArrayUtil.display(dataSet);
 
         // SORT DATA
@@ -71,7 +69,7 @@ public class ArrayUtilTester {
 
         // DISPLAY ARRAY
         System.out.println("DATA BEFORE: ");
-        data = ArrayUtil.generateDoubleRandomArrays(100, -99, 99);
+        double[] data = ArrayUtil.generateDoubleRandomArrays(100, -99, 99);
         ArrayUtil.displayData(data);
 
         // SORT DATA
@@ -552,17 +550,13 @@ public class ArrayUtilTester {
         System.out.println("DATA: ");
         dataSet = ArrayUtil.generateRandomArrays(100, -99, 99);
         ArrayUtil.display(dataSet);
+        ArrayUtil.linearSearch( dataSet, searchValue );
 
         // FIND DATA
-        int searchIndex = ArrayUtil.linearSearch(dataSet, searchValue);
-        for (int i = 0; i < dataSet.length; i++) {
-             System.out.println(dataSet[i] + " - The value is at: " + ArrayUtil.linearSearch( dataSet, dataSet[i] ) );
+        for( int i = 0; i < dataString.length; i++ ) {
+            assert( ArrayUtil.linearSearch( dataSet, dataSet[i] ) == i );
         }
-        System.out.println(searchIndex);
-        // CHECK
-        //for (int a = 0; a < dataSet.length - 1; a++) {
-        //assert (dataSet[a] == searchIndex );
-        //}
+        assert( ArrayUtil.linearSearch( dataSet, 100 ) == -1 );
         System.out.println("TEST CASE #21A RESULTS - PASSED");
         System.out.println();
         System.out.println();  
@@ -579,17 +573,13 @@ public class ArrayUtilTester {
         System.out.println("DATA: ");
         data = ArrayUtil.generateDoubleRandomArrays(100, -99, 99);
         ArrayUtil.displayData(data);
+        ArrayUtil.linearSearchDouble( data, search );
 
         // FIND DATA
-        double searchIndexDouble = ArrayUtil.linearSearchDouble(data, searchValue);
-        for (int i = 0; i < dataSet.length; i++) {
-             System.out.println(data[i] + " - The value is at: " + ArrayUtil.linearSearchDouble( data, data[i] ) );
+        for( int i = 0; i < dataString.length; i++ ) {
+            assert( ArrayUtil.linearSearchDouble( data, data[i] ) == i );
         }
-        System.out.println(searchIndexDouble);
-        // CHECK
-        //for (int a = 0; a < data.length - 1; a++) {
-        //assert (data[a] == searchIndexDouble );
-        //}
+        assert( ArrayUtil.linearSearchDouble( data, 100 ) == -1 );
         System.out.println("TEST CASE #22A RESULTS - PASSED");
         System.out.println();
         System.out.println();
@@ -601,8 +591,6 @@ public class ArrayUtilTester {
         System.out.println("TEST CASE #23A     : Linear Search (String)");
         System.out.println("PRE CONDITION      : unsorted array; random strings ");
         System.out.println("POST CONDITION     : the value you search for is the index of the location");
-
-        
         
         // DISPLAY ARRAY
         System.out.println("DATA: ");
@@ -644,20 +632,20 @@ public class ArrayUtilTester {
         //////////////////////////////START OF TEST 25A///////////////////////////////////
 
         System.out.println("-------------------------------");
-        System.out.println("TEST CASE #25A     : Binary Search (double/ascending)");
+        System.out.println("TEST CASE #25A     : Binary Search (int/descending)");
         System.out.println("PRE CONDITION      : sorted array; + and - numbers");
         System.out.println("POST CONDITION     : array sorted, lowest to highest");
 
         // DISPLAY ARRAY
         System.out.println("DATA: ");
-        data = ArrayUtil.generateArithmeticSequenceForDouble(100, -99, 99);
-        ArrayUtil.displayData(data);
+        dataSet = ArrayUtil.generateArithmeticSequenceBackward(100, 99, 1);
+        ArrayUtil.display(dataSet);
 
         // FIND DATA
         for( int i = 0; i < dataString.length; i++ ) {
-            assert( ArrayUtil.binarySearchDouble( data, data[i] ) == i );
+            assert( ArrayUtil.binarySearchBackward( dataSet, dataSet[i] ) == i );
         }
-        assert( ArrayUtil.binarySearchDouble( data, 100 ) == -1 );
+        assert( ArrayUtil.binarySearch( dataSet, 100 ) == -1 );
         System.out.println("TEST CASE #25A RESULTS - PASSED");
         System.out.println();
         System.out.println();
@@ -666,18 +654,18 @@ public class ArrayUtilTester {
         //////////////////////////////START OF TEST 26A///////////////////////////////////
 
         System.out.println("-------------------------------");
-        System.out.println("TEST CASE #26A     : Binary Search (double/descending)");
+        System.out.println("TEST CASE #26A     : Binary Search (double/ascending)");
         System.out.println("PRE CONDITION      : sorted array; + and - numbers");
         System.out.println("POST CONDITION     : array sorted, lowest to highest");
 
         // DISPLAY ARRAY
         System.out.println("DATA: ");
-        data = ArrayUtil.generateArithmeticSequenceForDouble(100, -99, 99);
+        data = ArrayUtil.generateArithmeticSequenceForDouble(100, 0, 1);
         ArrayUtil.displayData(data);
 
         // FIND DATA
         for( int i = 0; i < dataString.length; i++ ) {
-            assert( ArrayUtil.binarySearchDoubleBackward( data, data[i] ) == i );
+            assert( ArrayUtil.binarySearchDouble( data, data[i] ) == i );
         }
         assert( ArrayUtil.binarySearchDouble( data, 100 ) == -1 );
         System.out.println("TEST CASE #26A RESULTS - PASSED");
@@ -685,11 +673,34 @@ public class ArrayUtilTester {
         System.out.println();
         
         
-        
         //////////////////////////////START OF TEST 27A///////////////////////////////////
 
         System.out.println("-------------------------------");
-        System.out.println("TEST CASE #26A     : Binary Search (String/ascending)");
+        System.out.println("TEST CASE #27A     : Binary Search (double/descending)");
+        System.out.println("PRE CONDITION      : sorted array; + and - numbers");
+        System.out.println("POST CONDITION     : array sorted, lowest to highest");
+
+        // DISPLAY ARRAY
+        System.out.println("DATA: ");
+        data = ArrayUtil.generateArithmeticSequenceDoubleBackward(100, 99, 1);
+        ArrayUtil.displayData(data);
+        ArrayUtil.binarySearchDoubleBackward(data, search);
+
+        
+        // FIND DATA
+        for( int i = 0; i < dataString.length; i++ ) {
+            assert( ArrayUtil.binarySearchDoubleBackward( data, data[i] ) == i );
+        }
+        assert( ArrayUtil.binarySearchDouble( data, 100 ) == -1 );
+        System.out.println("TEST CASE #27A RESULTS - PASSED");
+        System.out.println();
+        System.out.println();
+        
+        
+        //////////////////////////////START OF TEST 28A///////////////////////////////////
+
+        System.out.println("-------------------------------");
+        System.out.println("TEST CASE #28A     : Binary Search (String/ascending)");
         System.out.println("PRE CONDITION      : sorted array; + and - numbers");
         System.out.println("POST CONDITION     : array sorted, lowest to highest");
 
@@ -700,10 +711,32 @@ public class ArrayUtilTester {
 
         // FIND DATA
         for( int i = 0; i < dataString.length; i++ ) {
-            assert( ArrayUtil.binarySearchString( dataString, dataString[i] ) == i );
+            assert( ArrayUtil.binarySearchString( dataString, dataString[i] ) == i);
         }
         assert( ArrayUtil.binarySearchString( dataString, "aaaaa" ) == -1 );
-        System.out.println("TEST CASE #26A RESULTS - PASSED");
+        System.out.println("TEST CASE #28A RESULTS - PASSED");
+        System.out.println();
+        System.out.println();
+        
+        
+        //////////////////////////////START OF TEST 29A///////////////////////////////////
+
+        System.out.println("-------------------------------");
+        System.out.println("TEST CASE #29A     : Binary Search (String/descending)");
+        System.out.println("PRE CONDITION      : sorted array; + and - numbers");
+        System.out.println("POST CONDITION     : array sorted, lowest to highest");
+
+        // DISPLAY ARRAY
+        System.out.println("DATA: ");
+        dataString = ArrayUtil.generateArithmeticSequenceStringBackward();
+        ArrayUtil.displayString(dataString);
+
+        // FIND DATA
+        for( int i = 0; i < dataString.length; i++ ) {
+            assert( ArrayUtil.binarySearchStringBackward( dataString, dataString[i] ) == i);
+        }
+        assert( ArrayUtil.binarySearchString( dataString, "aaaaa" ) == -1 );
+        System.out.println("TEST CASE #29A RESULTS - PASSED");
         System.out.println();
         System.out.println();
         
