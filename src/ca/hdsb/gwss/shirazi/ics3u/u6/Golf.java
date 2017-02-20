@@ -21,21 +21,14 @@ public class Golf {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int size = 100;
-        double start = 99;
-        double increment = 1;
-                
-        int value = 0;
-        double[] data = generateArithmeticSequenceBackward(size, start, increment);
-        System.out.print("Data: ");
-        display(data);
+
+        int[] data = {2, 4, 6, 8, 10, 1, 3, 5, 7, 9};  
         
         for (int i = 0; i < data.length; i++) {
-        double mid = binarySearchDoubleBackward(data, value);    
-        value++;    
-        System.out.println("Search Value at " + i + " is " + mid);
+        data[i] = 2 * i;
+        System.out.println(data[i]);
+   
         }
-         
     }
 //
 //        // OBJECTS
@@ -94,13 +87,13 @@ public class Golf {
 //        return location;
 //    }
     
-     public static void display(double[] data) {
-
-        for (int c = 0; c < data.length; c++) {
-            System.out.print(" " + data[c]);
-        }
-        System.out.println();
-    }
+//     public static void display(double[] data) {
+//
+//        for (int c = 0; c < data.length; c++) {
+//            System.out.print(" " + data[c]);
+//        }
+//        System.out.println();
+//    }
      
 
     
@@ -135,36 +128,36 @@ public class Golf {
 //    }
 //    
 //}
-     public static double[] generateArithmeticSequenceBackward(int size, double start, double increment) {
-
-        double[] data = new double[size];
-        for ( int c = 0; c < data.length; c++) {
-            data[c] = start;
-            start = start - increment;
-        }
-        return data;
+//     public static double[] generateArithmeticSequenceBackward(int size, double start, double increment) {
+//
+//        double[] data = new double[size];
+//        for ( int c = 0; c < data.length; c++) {
+//            data[c] = start;
+//            start = start - increment;
+//        }
+//        return data;
     }
      
      
      
-     public static double binarySearchDoubleBackward(double[] data, double value) {
+//     public static double binarySearchDoubleBackward(double[] data, double value) {
+//
+//        double right = 0;
+//        double left = data.length - 1;
+//        while (left >= right) {
+//            int mid = (int) (Math.floor((left - right) / 2) + right);
+//            if (data[mid] == value) {
+//                return mid;
+//            }
+//            if (value > data[mid]) {
+//                left = mid - 1;
+//            } else {
+//                right = mid + 1;
+//            }
+//        }
+//        return -1;
+//    }
 
-        double right = 0;
-        double left = data.length - 1;
-        while (left >= right) {
-            int mid = (int) (Math.floor((left - right) / 2) + right);
-            if (data[mid] == value) {
-                return mid;
-            }
-            if (value > data[mid]) {
-                left = mid - 1;
-            } else {
-                right = mid + 1;
-            }
-        }
-        return -1;
-    }
-}     
 
  /* FINISHED SELECTION SORT (INT/ASCENDING)
   * FINISHED SELECTION SORT (DOUBLE/ASCENDING)
